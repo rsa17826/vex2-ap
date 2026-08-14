@@ -6,7 +6,6 @@ from BaseClasses import Location
 from worlds.AutoWorld import World
 
 LOCATION_NAME_TO_ID: dict[str, int] = {
-  "hub": 1,
   # "stage1": 2,
   # "stage2": 3,
   # "stage3": 4,
@@ -21,7 +20,7 @@ LOCATION_NAME_TO_ID: dict[str, int] = {
 }
 
 
-_id_counter = 2
+_id_counter = 1
 for thing in PROG:
   if "receive" in thing:
     for itemInfo in thing["receive"]:

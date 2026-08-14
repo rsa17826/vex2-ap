@@ -38,6 +38,7 @@ for thing in PROG:
 
 
 
+print(ITEM_NAME_TO_ID, "ITEM_NAME_TO_ID")
 class Vex2Item(Item):
   game: str = "Vex2"
 
