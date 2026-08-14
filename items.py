@@ -29,7 +29,7 @@ for thing in PROG:
           DEFAULT_ITEM_CLASSIFICATIONS[itemName] = ItemClassification.progression
           ITEM_NAME_TO_ID[itemName] = _id_counter
           _id_counter += 1
-        elif itemInfo.startswith(("flag:",)):
+        elif itemInfo.startswith(("flag:", "star:")):
           continue
         else:
           print(itemName, "not used")
@@ -57,7 +57,7 @@ def create_item_with_correct_classification(world: World, name: str) -> Vex2Item
 def create_all_items(world: World) -> None:
   itempool: list[Item] = []
   for k in ITEM_NAME_TO_ID.keys():
-    if k.startswith(("trap:", "filler:")):
+    if k.startswith(("trap:", "filler:", "star:")):
       continue
 
     count = ITEM_COUNTS.get(k, 1)

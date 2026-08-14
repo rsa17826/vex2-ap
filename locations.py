@@ -49,13 +49,13 @@ def create_events(world: World) -> None:
   from ._progression import PROG
   from .items import Vex2Item
 
+  hub_region = world.get_region("hub")
   for thing in PROG:
     for itemInfo in thing["receive"]:
       if itemInfo.startswith(("flag:",)):
         event_name = itemInfo
-        region = world.get_region(thing["room"])
 
-        _ = region.add_event(
+        _ = hub_region.add_event(
           location_name=f"{thing['room']} - {event_name}",
           item_name=event_name,
           location_type=Vex2Location,
