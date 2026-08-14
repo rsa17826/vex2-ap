@@ -45,22 +45,27 @@ def set_all_location_rules(world: World) -> None:
     if allConditions:
       rule = reduce(lambda a, s: a | s, allConditions)
 
-      # Determine all target location names for this room/node
-      loc_names: list[str] = []
+      # 1. Match all regular locations that belong to this room
+      # (e.g. "stage1 - level:stage2", "stage1 - star:1-1")
+      for loc_name in LOCATION_NAME_TO_ID:
+        if loc_name.startswith(f"{room} - "):
+          location = world.get_location(loc_name)
+          world.set_rule(location, rule)
 
-      # 1. Regular location for this room (if it exists)
-      if room in LOCATION_NAME_TO_ID:
-        loc_names.append(room)
 
-      # 2. Any event locations created in this room
+      # 2. Match event locations for this room
+      # (e.g. "stage1 - flag:beat stage1")
       for itemInfo in node["receive"]:
         if itemInfo.startswith("flag:"):
-          loc_names.append(f"{room} - {itemInfo}")
+          event_loc_name = f"{room} - {itemInfo}"
+          try:
+            location = world.get_location(event_loc_name)
+            world.set_rule(location, rule)
+
+          except KeyError:
+            pass
 
 
-      for loc_name in loc_names:
-        location = world.get_location(loc_name)
-        world.set_rule(location, rule)
 
 
 

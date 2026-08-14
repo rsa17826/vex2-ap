@@ -7,7 +7,7 @@ if [ -n "$1" ]; then
   exit
 fi
 
-python3.13 ../../Generate.py
+python3.13 ../../Generate.py || exit 1
 filename="$(find ../../output/ -maxdepth 1 -name "AP_*.zip" -printf "%T@ %p\n" | sort -n | tail -n 1 | cut -d' ' -f2-)"
 td=$(mktemp -d)
 uz "$filename" "$td"

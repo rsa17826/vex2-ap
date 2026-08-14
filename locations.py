@@ -1,23 +1,44 @@
 from __future__ import annotations
 
+from ._progression import PROG
 from BaseClasses import Location
 
 from worlds.AutoWorld import World
 
 LOCATION_NAME_TO_ID: dict[str, int] = {
   "hub": 1,
-  "stage1": 2,
-  "stage2": 3,
-  "stage3": 4,
-  "stage4": 5,
-  "stage5": 6,
-  "stage6": 7,
-  "stage7": 8,
-  "stage8": 9,
-  "stage9": 10,
-  "stage10": 11,
-  "stage11": 12,
+  # "stage1": 2,
+  # "stage2": 3,
+  # "stage3": 4,
+  # "stage4": 5,
+  # "stage5": 6,
+  # "stage6": 7,
+  # "stage7": 8,
+  # "stage8": 9,
+  # "stage9": 10,
+  # "stage10": 11,
+  # "stage11": 12,
 }
+
+
+_id_counter = 2
+for thing in PROG:
+  if "receive" in thing:
+    for itemInfo in thing["receive"]:
+      if itemInfo.startswith(
+        (
+          "level:",
+          "star:",
+        )
+      ):
+        # itemName = itemInfo.split("#")[0]
+        itemName = f"{thing['room']} - {itemInfo}"
+        if itemName not in LOCATION_NAME_TO_ID:
+          LOCATION_NAME_TO_ID[itemName] = _id_counter
+          _id_counter += 1
+
+
+
 
 
 class Vex2Location(Location):
@@ -46,7 +67,6 @@ def create_regular_locations(world: World) -> None:
 
 
 def create_events(world: World) -> None:
-  from ._progression import PROG
   from .items import Vex2Item
 
   hub_region = world.get_region("hub")
