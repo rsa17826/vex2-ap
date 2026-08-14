@@ -137,7 +137,7 @@ PROG: list[ProgressionNode] = [
       ],
     ],
     "receive": [
-      "level:stage09",
+      "level:stage9",
       "flag:beat stage8",
       "star:9-0",
       "star:9-1",
@@ -145,15 +145,15 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "stage09",
+    "room": "stage9",
     "requires": [
       [
-        "level:stage09",
+        "level:stage9",
       ],
     ],
     "receive": [
       "level:stage10",
-      "flag:beat stage09",
+      "flag:beat stage9",
       "star:10-0",
       "star:10-1",
       "star:10-2",
