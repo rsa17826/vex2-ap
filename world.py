@@ -77,7 +77,6 @@ class Vex2World(World):
 
     return {
       **self.options.as_dict(*Vex2_options.option_presets["main"].keys()),
-      "roomData": getattr(self, "_mq_table_js", []),
       "AP_ITEM_IDS": {v: k for k, v in ITEM_NAME_TO_ID.items()},
       "AP_LOCATION_IDS": {loc.name: loc.address for loc in self.multiworld.get_locations(self.player) if loc.address is not None},
     }

@@ -14,107 +14,127 @@ PROG: list[ProgressionNode] = [
       [],
     ],
     "receive": [
-      "stage1",
+      "level:stage1",
     ],
   },
   {
     "requires": [
       [
-        "stage1",
+        "level:stage1",
       ],
     ],
     "receive": [
-      "stage2",
+      "level:stage2",
+      "flag:beat stage1",
     ],
   },
   {
     "requires": [
       [
-        "stage2",
+        "level:stage2",
       ],
     ],
     "receive": [
-      "stage3",
+      "level:stage3",
+      "flag:beat stage2",
     ],
   },
   {
     "requires": [
       [
-        "stage3",
+        "level:stage3",
       ],
     ],
     "receive": [
-      "stage4",
+      "level:stage4",
+      "flag:beat stage3",
     ],
   },
   {
     "requires": [
       [
-        "stage4",
+        "level:stage4",
       ],
     ],
     "receive": [
-      "stage5",
+      "level:stage5",
+      "flag:beat stage4",
     ],
   },
   {
     "requires": [
       [
-        "stage5",
+        "level:stage5",
       ],
     ],
     "receive": [
-      "stage6",
+      "level:stage6",
+      "flag:beat stage5",
     ],
   },
   {
     "requires": [
       [
-        "stage6",
+        "level:stage6",
       ],
     ],
     "receive": [
-      "stage7",
+      "level:stage7",
+      "flag:beat stage6",
     ],
   },
   {
     "requires": [
       [
-        "stage7",
+        "level:stage7",
       ],
     ],
     "receive": [
-      "stage8",
+      "level:stage8",
+      "flag:beat stage7",
     ],
   },
   {
     "requires": [
       [
-        "stage8",
+        "level:stage8",
       ],
     ],
     "receive": [
-      "stage9",
+      "level:stage9",
+      "flag:beat stage8",
     ],
   },
   {
     "requires": [
       [
-        "stage9",
+        "level:stage9",
       ],
     ],
     "receive": [
-      "stage10",
+      "level:stage10",
+      "flag:beat stage09",
     ],
   },
   {
     "requires": [
       [
-        "stage10",
+        "level:stage10",
       ],
     ],
     "receive": [
-      "stage11",
+      "level:stage11",
+      "flag:beat stage10",
+    ],
+  },
+  {
+    "requires": [
+      [
+        "level:stage11",
+      ],
+    ],
+    "receive": [
+      "flag:beat stage11",
     ],
   },
 ]

@@ -57,7 +57,7 @@ def set_completion_condition(world: World) -> None:
   rule: Rule[World] = True_()
   if world.options.all_stages_complete:
     for i in range(1, 11, 1):
-      rule &= Has("beat stage" + str(i))
+      rule &= Has("flag:beat stage" + str(i))
 
 
   world.set_completion_rule(rule)
