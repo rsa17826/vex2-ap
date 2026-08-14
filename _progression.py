@@ -44,6 +44,7 @@ PROG: list[ProgressionNode] = [
       "flag:beat stage1",
       "star:0",
       "star:1",
+      "star:2",
     ],
   },
   {
@@ -71,6 +72,7 @@ PROG: list[ProgressionNode] = [
       "level:stage4",
       "flag:beat stage3",
       "star:0",
+      "star:1",
     ],
   },
   {
@@ -98,7 +100,6 @@ PROG: list[ProgressionNode] = [
       "flag:beat stage5",
       "star:0",
       "star:1",
-      "star:2",
     ],
   },
   {
@@ -112,6 +113,8 @@ PROG: list[ProgressionNode] = [
       "level:stage7",
       "flag:beat stage6",
       "star:0",
+      "star:1",
+      "star:2",
     ],
   },
   {
@@ -125,7 +128,6 @@ PROG: list[ProgressionNode] = [
       "level:stage8",
       "flag:beat stage7",
       "star:0",
-      "star:1",
     ],
   },
   {
@@ -140,7 +142,6 @@ PROG: list[ProgressionNode] = [
       "flag:beat stage8",
       "star:0",
       "star:1",
-      "star:2",
     ],
   },
   {
