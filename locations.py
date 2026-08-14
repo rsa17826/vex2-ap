@@ -53,12 +53,10 @@ def create_events(world: World) -> None:
     for itemInfo in thing["receive"]:
       if itemInfo.startswith(("flag:",)):
         event_name = itemInfo
-        room_id = thing["room"]
-
-        region = world.get_region(room_id)
+        region = world.get_region(thing["room"])
 
         _ = region.add_event(
-          location_name=f"{room_id} - {event_name}",
+          location_name=f"{thing['room']} - {event_name}",
           item_name=event_name,
           location_type=Vex2Location,
           item_type=Vex2Item,

@@ -11,7 +11,7 @@ class ProgressionNode(TypedDict):
 
 PROG: list[ProgressionNode] = [
   {
-    "room": "stage1",
+    "room": "hub",
     "requires": [
       [],
     ],
@@ -20,7 +20,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "stage2",
+    "room": "stage1",
     "requires": [
       [
         "level:stage1",
@@ -32,7 +32,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "stage3",
+    "room": "stage2",
     "requires": [
       [
         "level:stage2",
@@ -44,7 +44,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "stage4",
+    "room": "stage3",
     "requires": [
       [
         "level:stage3",
@@ -56,7 +56,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "stage5",
+    "room": "stage4",
     "requires": [
       [
         "level:stage4",
@@ -68,7 +68,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "stage6",
+    "room": "stage5",
     "requires": [
       [
         "level:stage5",
@@ -80,7 +80,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "stage7",
+    "room": "stage6",
     "requires": [
       [
         "level:stage6",
@@ -92,7 +92,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "stage8",
+    "room": "stage7",
     "requires": [
       [
         "level:stage7",
@@ -104,7 +104,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "stage9",
+    "room": "stage8",
     "requires": [
       [
         "level:stage8",
@@ -116,7 +116,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "stage10",
+    "room": "stage9",
     "requires": [
       [
         "level:stage9",
@@ -124,11 +124,11 @@ PROG: list[ProgressionNode] = [
     ],
     "receive": [
       "level:stage10",
-      "flag:beat stage09",
+      "flag:beat stage9",
     ],
   },
   {
-    "room": "stage11",
+    "room": "stage10",
     "requires": [
       [
         "level:stage10",
@@ -140,7 +140,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "stage12",
+    "room": "stage11",
     "requires": [
       [
         "level:stage11",

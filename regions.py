@@ -32,6 +32,6 @@ from BaseClasses import Region
 
 
 def create_and_connect_regions(world: World) -> None:
-  # Create the origin hub region required by world.py
-  hub = Region("hub", world.player, world.multiworld)
-  world.multiworld.regions.append(hub)
+  for loc in LOCATION_NAME_TO_ID.keys():
+    world.multiworld.regions.append(Region(loc, world.player, world.multiworld))
+

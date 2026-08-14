@@ -20,9 +20,6 @@ def set_all_entrance_rules(_world: World) -> None:
 
 def set_all_location_rules(world: World) -> None:
   for node in PROG:
-    if "receive" not in node:
-      continue
-
     for itemInfo in node["receive"]:
       loc_names: list[str] = [f"{itemInfo}"]
       requires = node.get("requires", [])
@@ -32,7 +29,7 @@ def set_all_location_rules(world: World) -> None:
 
       allConditions: list[Rule[World]] = []
       for _and in requires:
-        clean_items: list[str] = [token for token in _and]
+        clean_items: list[str] = list(_and)
 
         sub_rule: Rule | None = None
         for item in clean_items:
