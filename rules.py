@@ -18,34 +18,49 @@ def set_all_entrance_rules(_world: World) -> None:
   pass
 
 
+from .locations import LOCATION_NAME_TO_ID
+
+
 def set_all_location_rules(world: World) -> None:
   for node in PROG:
-    for itemInfo in node["receive"]:
-      loc_names: list[str] = [f"{itemInfo}"]
-      requires = node.get("requires", [])
+    room = node["room"]
+    requires = node.get("requires", [])
 
-      if any(len(_and) == 0 for _and in requires):
-        continue
+    if any(len(_and) == 0 for _and in requires):
+      continue
 
-      allConditions: list[Rule[World]] = []
-      for _and in requires:
-        clean_items: list[str] = list(_and)
+    allConditions: list[Rule[World]] = []
+    for _and in requires:
+      clean_items: list[str] = list(_and)
 
-        sub_rule: Rule | None = None
-        for item in clean_items:
-          temprule = Has(item)
-          sub_rule = temprule if sub_rule is None else (sub_rule & temprule)
+      sub_rule: Rule | None = None
+      for item in clean_items:
+        temprule = Has(item)
+        sub_rule = temprule if sub_rule is None else (sub_rule & temprule)
 
-        if sub_rule is not None:
-          allConditions.append(sub_rule)
+      if sub_rule is not None:
+        allConditions.append(sub_rule)
 
 
-      if allConditions:
-        rule = reduce(lambda a, s: a | s, allConditions)
-        for loc_name in loc_names:
-          location = world.get_location(loc_name)
-          world.set_rule(location, rule)
+    if allConditions:
+      rule = reduce(lambda a, s: a | s, allConditions)
 
+      # Determine all target location names for this room/node
+      loc_names: list[str] = []
+
+      # 1. Regular location for this room (if it exists)
+      if room in LOCATION_NAME_TO_ID:
+        loc_names.append(room)
+
+      # 2. Any event locations created in this room
+      for itemInfo in node["receive"]:
+        if itemInfo.startswith("flag:"):
+          loc_names.append(f"{room} - {itemInfo}")
+
+
+      for loc_name in loc_names:
+        location = world.get_location(loc_name)
+        world.set_rule(location, rule)
 
 
 
