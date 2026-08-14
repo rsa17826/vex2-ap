@@ -29,8 +29,10 @@ for thing in PROG:
           DEFAULT_ITEM_CLASSIFICATIONS[itemName] = ItemClassification.progression
           ITEM_NAME_TO_ID[itemName] = _id_counter
           _id_counter += 1
+        elif itemInfo.startswith(("flag:",)):
+          continue
         else:
-          print("unused")
+          print(itemName, "not used")
 
 
 

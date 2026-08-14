@@ -2,6 +2,7 @@ from typing import NotRequired, TypedDict
 
 
 class ProgressionNode(TypedDict):
+  room: str
   receive: list[str]
   # requires: NotRequired[list[list[str]]]
   requires: list[list[str]]
@@ -10,6 +11,7 @@ class ProgressionNode(TypedDict):
 
 PROG: list[ProgressionNode] = [
   {
+    "room": "stage1",
     "requires": [
       [],
     ],
@@ -18,6 +20,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
+    "room": "stage2",
     "requires": [
       [
         "level:stage1",
@@ -29,6 +32,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
+    "room": "stage3",
     "requires": [
       [
         "level:stage2",
@@ -40,6 +44,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
+    "room": "stage4",
     "requires": [
       [
         "level:stage3",
@@ -51,6 +56,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
+    "room": "stage5",
     "requires": [
       [
         "level:stage4",
@@ -62,6 +68,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
+    "room": "stage6",
     "requires": [
       [
         "level:stage5",
@@ -73,6 +80,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
+    "room": "stage7",
     "requires": [
       [
         "level:stage6",
@@ -84,6 +92,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
+    "room": "stage8",
     "requires": [
       [
         "level:stage7",
@@ -95,6 +104,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
+    "room": "stage9",
     "requires": [
       [
         "level:stage8",
@@ -106,6 +116,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
+    "room": "stage10",
     "requires": [
       [
         "level:stage9",
@@ -117,6 +128,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
+    "room": "stage11",
     "requires": [
       [
         "level:stage10",
@@ -128,6 +140,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
+    "room": "stage12",
     "requires": [
       [
         "level:stage11",

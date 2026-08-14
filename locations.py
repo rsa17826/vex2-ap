@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from BaseClasses import Location
+
 from worlds.AutoWorld import World
 
 LOCATION_NAME_TO_ID: dict[str, int] = {
@@ -45,4 +46,23 @@ def create_regular_locations(world: World) -> None:
 
 
 def create_events(world: World) -> None:
-  return
+  from ._progression import PROG
+  from .items import Vex2Item
+
+  for thing in PROG:
+    for itemInfo in thing["receive"]:
+      if itemInfo.startswith(("flag:",)):
+        event_name = itemInfo
+        room_id = thing["room"]
+
+        region = world.get_region(room_id)
+
+        _ = region.add_event(
+          location_name=f"{room_id} - {event_name}",
+          item_name=event_name,
+          location_type=Vex2Location,
+          item_type=Vex2Item,
+        )
+
+
+
