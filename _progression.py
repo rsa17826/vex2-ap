@@ -84,7 +84,6 @@ PROG: list[ProgressionNode] = [
       "level:stage5",
       "flag:beat stage4",
       "star:0",
-      "star:1",
     ],
   },
   {
