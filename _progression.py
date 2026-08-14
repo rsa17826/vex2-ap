@@ -176,4 +176,126 @@ PROG: list[ProgressionNode] = [
       "flag:beat stage10",
     ],
   },
+  {
+    "room": "stage0",
+    "requires": [
+      [
+        "level:stage0",
+      ],
+    ],
+    "receive": [
+      "achievement:1 - TUTORIAL",
+      "achievement:12 - VEXIPHOBIA",
+    ],
+  },
+  {
+    "room": "stage1",
+    "requires": [
+      [
+        "level:stage1",
+      ],
+    ],
+    "receive": [
+      "achievement:2 - ACT 1",
+    ],
+  },
+  {
+    "room": "stage2",
+    "requires": [
+      [
+        "level:stage2",
+      ],
+    ],
+    "receive": [
+      "achievement:3 - ACT 2",
+    ],
+  },
+  {
+    "room": "stage3",
+    "requires": [
+      [
+        "level:stage3",
+      ],
+    ],
+    "receive": [
+      "achievement:4 - ACT 3",
+    ],
+  },
+  {
+    "room": "stage4",
+    "requires": [
+      [
+        "level:stage4",
+      ],
+    ],
+    "receive": [
+      "achievement:5 - ACT 4",
+    ],
+  },
+  {
+    "room": "stage5",
+    "requires": [
+      [
+        "level:stage5",
+      ],
+    ],
+    "receive": [
+      "achievement:6 - ACT 5",
+    ],
+  },
+  {
+    "room": "stage6",
+    "requires": [
+      [
+        "level:stage6",
+      ],
+    ],
+    "receive": [
+      "achievement:7 - ACT 6",
+    ],
+  },
+  {
+    "room": "stage7",
+    "requires": [
+      [
+        "level:stage7",
+      ],
+    ],
+    "receive": [
+      "achievement:8 - ACT 7",
+    ],
+  },
+  {
+    "room": "stage8",
+    "requires": [
+      [
+        "level:stage8",
+      ],
+    ],
+    "receive": [
+      "achievement:9 - ACT 8",
+    ],
+  },
+  {
+    "room": "stage9",
+    "requires": [
+      [
+        "level:stage9",
+      ],
+    ],
+    "receive": [
+      "achievement:10 - ACT 9",
+    ],
+  },
+  {
+    "room": "stage9",
+    "requires": [
+      [
+        "level:stage9",
+      ],
+    ],
+    "receive": [
+      "achievement:11 - VEXED MUCH?",
+    ],
+  },
 ]
