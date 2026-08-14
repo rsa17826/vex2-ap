@@ -17,6 +17,11 @@ PROG: list[ProgressionNode] = [
     ],
     "receive": [
       "level:stage0",
+      # NOTE any stage
+      "achievement:13 - NOT A SCRATCH",
+      "achievement:21 - 2ND PLACE",
+      "achievement:22 - 1ST PLACE",
+      "achievement:23 - PERFECT",
     ],
   },
   {
@@ -30,6 +35,8 @@ PROG: list[ProgressionNode] = [
       "level:stage1",
       "flag:beat stage0",
       "star:0",
+      "achievement:1 - TUTORIAL",
+      "achievement:12 - VEXIPHOBIA",
     ],
   },
   {
@@ -45,6 +52,7 @@ PROG: list[ProgressionNode] = [
       "star:0",
       "star:1",
       "star:2",
+      "achievement:2 - ACT 1",
     ],
   },
   {
@@ -59,6 +67,7 @@ PROG: list[ProgressionNode] = [
       "flag:beat stage2",
       "star:0",
       "star:1",
+      "achievement:3 - ACT 2",
     ],
   },
   {
@@ -73,6 +82,7 @@ PROG: list[ProgressionNode] = [
       "flag:beat stage3",
       "star:0",
       "star:1",
+      "achievement:4 - ACT 3",
     ],
   },
   {
@@ -86,6 +96,7 @@ PROG: list[ProgressionNode] = [
       "level:stage5",
       "flag:beat stage4",
       "star:0",
+      "achievement:5 - ACT 4",
     ],
   },
   {
@@ -100,6 +111,7 @@ PROG: list[ProgressionNode] = [
       "flag:beat stage5",
       "star:0",
       "star:1",
+      "achievement:6 - ACT 5",
     ],
   },
   {
@@ -115,6 +127,7 @@ PROG: list[ProgressionNode] = [
       "star:0",
       "star:1",
       "star:2",
+      "achievement:7 - ACT 6",
     ],
   },
   {
@@ -128,6 +141,7 @@ PROG: list[ProgressionNode] = [
       "level:stage8",
       "flag:beat stage7",
       "star:0",
+      "achievement:8 - ACT 7",
     ],
   },
   {
@@ -142,6 +156,7 @@ PROG: list[ProgressionNode] = [
       "flag:beat stage8",
       "star:0",
       "star:1",
+      "achievement:9 - ACT 8",
     ],
   },
   {
@@ -157,6 +172,7 @@ PROG: list[ProgressionNode] = [
       "star:0",
       "star:1",
       "star:2",
+      "achievement:10 - ACT 9",
     ],
   },
   {
@@ -174,128 +190,46 @@ PROG: list[ProgressionNode] = [
       "star:4",
       "star:5",
       "flag:beat stage10",
+      "achievement:11 - VEXED MUCH?",
     ],
   },
   {
-    "room": "stage0",
+    "room": "hub",
     "requires": [
       [
         "level:stage0",
       ],
     ],
     "receive": [
-      "achievement:1 - TUTORIAL",
-      "achievement:12 - VEXIPHOBIA",
+      "achievement:27 - CURB STOMP",
     ],
   },
   {
-    "room": "stage1",
+    "room": "hub",
     "requires": [
       [
         "level:stage1",
       ],
-    ],
-    "receive": [
-      "achievement:2 - ACT 1",
-    ],
-  },
-  {
-    "room": "stage2",
-    "requires": [
       [
         "level:stage2",
       ],
-    ],
-    "receive": [
-      "achievement:3 - ACT 2",
-    ],
-  },
-  {
-    "room": "stage3",
-    "requires": [
       [
-        "level:stage3",
+        "level:stage10",
       ],
     ],
     "receive": [
-      "achievement:4 - ACT 3",
+      "achievement:28 - LIFESAVER",
     ],
   },
   {
-    "room": "stage4",
+    "room": "hub",
     "requires": [
       [
-        "level:stage4",
+        "level:stage10",
       ],
     ],
     "receive": [
-      "achievement:5 - ACT 4",
-    ],
-  },
-  {
-    "room": "stage5",
-    "requires": [
-      [
-        "level:stage5",
-      ],
-    ],
-    "receive": [
-      "achievement:6 - ACT 5",
-    ],
-  },
-  {
-    "room": "stage6",
-    "requires": [
-      [
-        "level:stage6",
-      ],
-    ],
-    "receive": [
-      "achievement:7 - ACT 6",
-    ],
-  },
-  {
-    "room": "stage7",
-    "requires": [
-      [
-        "level:stage7",
-      ],
-    ],
-    "receive": [
-      "achievement:8 - ACT 7",
-    ],
-  },
-  {
-    "room": "stage8",
-    "requires": [
-      [
-        "level:stage8",
-      ],
-    ],
-    "receive": [
-      "achievement:9 - ACT 8",
-    ],
-  },
-  {
-    "room": "stage9",
-    "requires": [
-      [
-        "level:stage9",
-      ],
-    ],
-    "receive": [
-      "achievement:10 - ACT 9",
-    ],
-  },
-  {
-    "room": "stage9",
-    "requires": [
-      [
-        "level:stage9",
-      ],
-    ],
-    "receive": [
-      "achievement:11 - VEXED MUCH?",
+      "achievement:29 - KEYLOGGER",
     ],
   },
 ]
