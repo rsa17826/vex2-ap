@@ -1,0 +1,7 @@
+.venv/
+.direnv/
+.git/
+__pycache__/
+.ruff_cache/
+build/
+*.log

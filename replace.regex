@@ -1,0 +1,4 @@
+@file \.py$
+@regex (True|False)\s+(?:or|and)\s+world\.options\.\w+
+@errgroup 1
+@info remove "$1" when option fixed

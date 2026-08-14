@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+if [ -n "$1" ]; then
+  uz ../../output/AP_"$1".zip asd &&
+    codium --wait asd/AP_"$1"_Spoiler.txt
+  # read -r _
+  rm -rf asd
+  exit
+fi
+
+python3.13 ../../Generate.py
+filename="$(find ../../output/ -maxdepth 1 -name "AP_*.zip" -printf "%T@ %p\n" | sort -n | tail -n 1 | cut -d' ' -f2-)"
+td=$(mktemp -d)
+uz "$filename" "$td"
+filename2="$(find "$td" -maxdepth 1 -name "*.txt" -printf "%T@ %p\n" | sort -n | tail -n 1 | cut -d' ' -f2-)"
+if [ "$filename2" != "" ]; then
+  codium --wait "$filename2"
+fi
+rm -f "$filename"
+rm -rf "$td"
