@@ -323,7 +323,7 @@ PROG: list[ProgressionNode] = [
     "room": "hub",
     "requires": [
       [
-        # "level:stage10",
+        "level:stage5",
       ],
     ],
     "receive": [
