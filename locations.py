@@ -42,15 +42,14 @@ def create_all_locations(world: World) -> None:
 
 
 def create_regular_locations(world: World) -> None:
-  hub_region = world.get_region("hub")
   for locationName, location_id in LOCATION_NAME_TO_ID.items():
     location = Vex2Location(
       world.player,
       locationName,
       location_id,
-      hub_region,
+      world.get_region(thing["room"]),
     )
-    hub_region.locations.append(location)
+    world.get_region(thing["room"]).locations.append(location)
 
 
 def create_events(world: World) -> None:
