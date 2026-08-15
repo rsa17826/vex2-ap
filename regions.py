@@ -32,5 +32,7 @@ from BaseClasses import Region
 
 
 def create_and_connect_regions(world: World) -> None:
-  hub_region = Region("hub", world.player, world.multiworld)
-  world.multiworld.regions.append(hub_region)
+  world.multiworld.regions.append(Region("hub", world.player, world.multiworld))
+  for i in range(0, 11, 1):
+    world.multiworld.regions.append(Region(f"stage{i}", world.player, world.multiworld))
+

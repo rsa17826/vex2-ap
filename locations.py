@@ -5,20 +5,7 @@ from BaseClasses import Location
 
 from worlds.AutoWorld import World
 
-LOCATION_NAME_TO_ID: dict[str, int] = {
-  # "stage1": 2,
-  # "stage2": 3,
-  # "stage3": 4,
-  # "stage4": 5,
-  # "stage5": 6,
-  # "stage6": 7,
-  # "stage7": 8,
-  # "stage8": 9,
-  # "stage9": 10,
-  # "stage10": 11,
-  # "stage11": 12,
-}
-
+LOCATION_NAME_TO_ID: dict[str, int] = {}
 
 _id_counter = 1
 for thing in PROG:
@@ -69,13 +56,24 @@ def create_regular_locations(world: World) -> None:
 def create_events(world: World) -> None:
   from .items import Vex2Item
 
-  hub_region = world.get_region("hub")
+  starcount = [1, 3, 2, 2, 1, 2, 3, 1, 2, 3, 6]
+  for room in range(0, 11, 1):
+    for i in range(0, starcount[room] - 1, 1):
+      print(room, i)
+      _ = world.get_region("hub").add_event(
+        location_name=f"{room} - star#{i}",
+        item_name="flag:starCanBeGot",
+        location_type=Vex2Location,
+        item_type=Vex2Item,
+      )
+
+
   for thing in PROG:
     for itemInfo in thing["receive"]:
       if itemInfo.startswith(("flag:",)):
         event_name = itemInfo
 
-        _ = hub_region.add_event(
+        _ = world.get_region(thing["room"]).add_event(
           location_name=f"{thing['room']} - {event_name}",
           item_name=event_name,
           location_type=Vex2Location,

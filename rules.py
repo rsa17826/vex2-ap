@@ -3,9 +3,11 @@ from __future__ import annotations
 from functools import reduce
 
 from rule_builder.rules import Has, Rule, True_
+
 from worlds.AutoWorld import World
 
 from ._progression import PROG
+from .locations import LOCATION_NAME_TO_ID
 
 
 def set_all_rules(world: World) -> None:
@@ -16,9 +18,6 @@ def set_all_rules(world: World) -> None:
 
 def set_all_entrance_rules(_world: World) -> None:
   pass
-
-
-from .locations import LOCATION_NAME_TO_ID
 
 
 def set_all_location_rules(world: World) -> None:
@@ -35,7 +34,11 @@ def set_all_location_rules(world: World) -> None:
 
       sub_rule: Rule | None = None
       for item in clean_items:
-        temprule = Has(item)
+        if item.startswith("flag:starCanBeGot"):
+          temprule = Has("flag:starCanBeGot", int(item.split("#")[1]))
+        else:
+          temprule = Has(item)
+
         sub_rule = temprule if sub_rule is None else (sub_rule & temprule)
 
       if sub_rule is not None:
@@ -55,8 +58,10 @@ def set_all_location_rules(world: World) -> None:
             try:
               location = world.get_location(loc_name)
               world.set_rule(location, rule)
+
             except KeyError:
               pass
+
 
 
 
@@ -66,7 +71,7 @@ def set_all_location_rules(world: World) -> None:
 def set_completion_condition(world: World) -> None:
   rule: Rule[World] = True_()
   if world.options.all_stages_complete:
-    for i in range(1, 11, 1):
+    for i in range(0, 11, 1):
       rule &= Has("flag:beat stage" + str(i))
 
 

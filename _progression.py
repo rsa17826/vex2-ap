@@ -13,6 +13,28 @@ PROG: list[ProgressionNode] = [
   {
     "room": "hub",
     "requires": [
+      [
+        "flag:starCanBeGot#3",
+      ],
+    ],
+    "receive": [
+      "achievement:14 - STARGAZER",
+    ],
+  },
+  {
+    "room": "hub",
+    "requires": [
+      [
+        "flag:starCanBeGot#13",
+      ],
+    ],
+    "receive": [
+      "achievement:15 - ASTRONAUT",
+    ],
+  },
+  {
+    "room": "hub",
+    "requires": [
       [],
     ],
     "receive": [
