@@ -57,7 +57,7 @@ def create_events(world: World) -> None:
 
   starcount = [1, 3, 2, 2, 1, 2, 3, 1, 2, 3, 6]
   for room in range(0, 11, 1):
-    for i in range(0, starcount[room] - 1, 1):
+    for i in range(0, starcount[room], 1):
       print(room, i)
       _ = world.get_region("hub").add_event(
         location_name=f"{room} - star#{i}",
