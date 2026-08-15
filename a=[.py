@@ -164,13 +164,17 @@ a = {
   "6-2": [
     [
       "move:walljump",
+      "move:pulley",
+      "move:portal",
       "move:swim",
       "move:cannon",
     ],
   ],
   "6-win": [
     [
+      "move:portal",
       "move:walljump",
+      "move:pulley",
       "move:swim",
       "move:cannon",
     ],
@@ -180,11 +184,13 @@ a = {
     [
       "move:kick",
       "move:walljump",
+      "move:cannon",
     ],
   ],
   "7-win": [
     [
       "move:kick",
+      "move:cannon",
       "move:walljump",
       "move:polejump",
     ],
@@ -218,14 +224,13 @@ a = {
     [
       "move:swim",
       "move:slide",
-      "move:walljump",
     ],
   ],
   "9-1": [
     [
       "move:slide",
-      "move:walljump",
       "move:polejump",
+      "move:walljump",
     ],
   ],
   "9-2": [
@@ -238,6 +243,7 @@ a = {
     [
       "move:slide",
       "move:walljump",
+      "move:pulley",
     ],
   ],
   #
