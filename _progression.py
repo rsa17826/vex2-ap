@@ -22,6 +22,31 @@ PROG: list[ProgressionNode] = [
       "achievement:21 - 2ND PLACE",
       "achievement:22 - 1ST PLACE",
       "achievement:23 - PERFECT",
+      "achievement:26 - DOUBLE DOWN",
+      "achievement:30 - MICROWAVE",
+    ],
+  },
+  {
+    "room": "hub",
+    "requires": [
+      [
+        "level:stage0",
+        "level:stage1",
+        "level:stage2",
+        "level:stage3",
+        "level:stage4",
+        "level:stage5",
+        "level:stage6",
+        "level:stage7",
+        "level:stage8",
+        "level:stage9",
+        "level:stage10",
+      ],
+    ],
+    "receive": [
+      "achievement:16 - BUZZ LIGHTYEAR",
+      "achievement:24 - OLYMPIAN",
+      "achievement:25 - PERFECTIONIST",
     ],
   },
   {
@@ -230,6 +255,17 @@ PROG: list[ProgressionNode] = [
     ],
     "receive": [
       "achievement:29 - KEYLOGGER",
+    ],
+  },
+  {
+    "room": "hub",
+    "requires": [
+      [
+        # "level:stage10",
+      ],
+    ],
+    "receive": [
+      "achievement:20 - BLOWN AWAY!",
     ],
   },
 ]
