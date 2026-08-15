@@ -47,9 +47,9 @@ def create_regular_locations(world: World) -> None:
       world.player,
       locationName,
       location_id,
-      world.get_region(thing["room"]),
+      world.get_region(locationName.split(" - ", 1)[0]),
     )
-    world.get_region(thing["room"]).locations.append(location)
+    world.get_region(locationName.split(" - ", 1)[0]).locations.append(location)
 
 
 def create_events(world: World) -> None:

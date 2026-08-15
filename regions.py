@@ -28,11 +28,20 @@ def _reqs_to_rule(world: World, reqs: list[list[str]]) -> Rule | None:
   return rule
 
 
-from BaseClasses import Region
+from BaseClasses import Region, Entrance
+from worlds.AutoWorld import World
 
 
 def create_and_connect_regions(world: World) -> None:
-  world.multiworld.regions.append(Region("hub", world.player, world.multiworld))
+  hub = Region("hub", world.player, world.multiworld)
+  world.multiworld.regions.append(hub)
   for i in range(0, 11, 1):
-    world.multiworld.regions.append(Region(f"stage{i}", world.player, world.multiworld))
+    stage_name = f"stage{i}"
+    stage_region = Region(stage_name, world.player, world.multiworld)
+    world.multiworld.regions.append(stage_region)
+
+    # Connect hub to each stage (or add logic via rules if stages require specific access)
+    hub_to_stage = Entrance(world.player, f"Hub to {stage_name}", hub)
+    hub.exits.append(hub_to_stage)
+    hub_to_stage.connect(stage_region)
 
