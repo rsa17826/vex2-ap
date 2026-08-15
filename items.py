@@ -29,7 +29,7 @@ for thing in PROG:
           DEFAULT_ITEM_CLASSIFICATIONS[itemName] = ItemClassification.progression
           ITEM_NAME_TO_ID[itemName] = _id_counter
           _id_counter += 1
-        elif itemInfo.startswith(("flag:", "star:")):
+        elif itemInfo.startswith(("flag:", "star:", "achievement:")):
           continue
         else:
           print(itemName, "not used")
@@ -39,6 +39,8 @@ for thing in PROG:
 
 
 print(ITEM_NAME_TO_ID, "ITEM_NAME_TO_ID")
+
+
 class Vex2Item(Item):
   game: str = "Vex2"
 

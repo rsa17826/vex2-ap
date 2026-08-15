@@ -18,12 +18,11 @@ PROG: list[ProgressionNode] = [
     "receive": [
       "level:stage0",
       # NOTE any stage
-      "achievement:13 - NOT A SCRATCH",
-      "achievement:21 - 2ND PLACE",
-      "achievement:22 - 1ST PLACE",
-      "achievement:23 - PERFECT",
-      "achievement:26 - DOUBLE DOWN",
-      "achievement:30 - MICROWAVE",
+      "achievement:13:NOT A SCRATCH",
+      "achievement:21:2ND PLACE",
+      "achievement:22:1ST PLACE",
+      "achievement:23:PERFECT",
+      "achievement:30:MICROWAVE",
     ],
   },
   {
@@ -44,9 +43,11 @@ PROG: list[ProgressionNode] = [
       ],
     ],
     "receive": [
-      "achievement:16 - BUZZ LIGHTYEAR",
-      "achievement:24 - OLYMPIAN",
-      "achievement:25 - PERFECTIONIST",
+      "achievement:16:BUZZ LIGHTYEAR",
+      "achievement:24:OLYMPIAN",
+      "achievement:25:PERFECTIONIST",
+      # NOTE don't want to have to do single level 22 times starting rando
+      "achievement:26:DOUBLE DOWN",
     ],
   },
   {
@@ -57,11 +58,11 @@ PROG: list[ProgressionNode] = [
       ],
     ],
     "receive": [
-      "level:stage1",
+      "achievement:1:TUTORIAL",
+      "achievement:12:VEXIPHOBIA",
       "flag:beat stage0",
+      "level:stage1",
       "star:0",
-      "achievement:1 - TUTORIAL",
-      "achievement:12 - VEXIPHOBIA",
     ],
   },
   {
@@ -72,12 +73,12 @@ PROG: list[ProgressionNode] = [
       ],
     ],
     "receive": [
-      "level:stage2",
+      "achievement:2:ACT 1",
       "flag:beat stage1",
+      "level:stage2",
       "star:0",
       "star:1",
       "star:2",
-      "achievement:2 - ACT 1",
     ],
   },
   {
@@ -88,11 +89,11 @@ PROG: list[ProgressionNode] = [
       ],
     ],
     "receive": [
-      "level:stage3",
+      "achievement:3:ACT 2",
       "flag:beat stage2",
+      "level:stage3",
       "star:0",
       "star:1",
-      "achievement:3 - ACT 2",
     ],
   },
   {
@@ -103,11 +104,11 @@ PROG: list[ProgressionNode] = [
       ],
     ],
     "receive": [
-      "level:stage4",
+      "achievement:4:ACT 3",
       "flag:beat stage3",
+      "level:stage4",
       "star:0",
       "star:1",
-      "achievement:4 - ACT 3",
     ],
   },
   {
@@ -118,10 +119,10 @@ PROG: list[ProgressionNode] = [
       ],
     ],
     "receive": [
-      "level:stage5",
+      "achievement:5:ACT 4",
       "flag:beat stage4",
+      "level:stage5",
       "star:0",
-      "achievement:5 - ACT 4",
     ],
   },
   {
@@ -132,11 +133,11 @@ PROG: list[ProgressionNode] = [
       ],
     ],
     "receive": [
-      "level:stage6",
+      "achievement:6:ACT 5",
       "flag:beat stage5",
+      "level:stage6",
       "star:0",
       "star:1",
-      "achievement:6 - ACT 5",
     ],
   },
   {
@@ -147,12 +148,12 @@ PROG: list[ProgressionNode] = [
       ],
     ],
     "receive": [
-      "level:stage7",
+      "achievement:7:ACT 6",
       "flag:beat stage6",
+      "level:stage7",
       "star:0",
       "star:1",
       "star:2",
-      "achievement:7 - ACT 6",
     ],
   },
   {
@@ -163,10 +164,10 @@ PROG: list[ProgressionNode] = [
       ],
     ],
     "receive": [
-      "level:stage8",
+      "achievement:8:ACT 7",
       "flag:beat stage7",
+      "level:stage8",
       "star:0",
-      "achievement:8 - ACT 7",
     ],
   },
   {
@@ -177,11 +178,11 @@ PROG: list[ProgressionNode] = [
       ],
     ],
     "receive": [
-      "level:stage9",
+      "achievement:9:ACT 8",
       "flag:beat stage8",
+      "level:stage9",
       "star:0",
       "star:1",
-      "achievement:9 - ACT 8",
     ],
   },
   {
@@ -192,12 +193,12 @@ PROG: list[ProgressionNode] = [
       ],
     ],
     "receive": [
-      "level:stage10",
+      "achievement:10:ACT 9",
       "flag:beat stage9",
+      "level:stage10",
       "star:0",
       "star:1",
       "star:2",
-      "achievement:10 - ACT 9",
     ],
   },
   {
@@ -208,14 +209,14 @@ PROG: list[ProgressionNode] = [
       ],
     ],
     "receive": [
+      "achievement:11:VEXED MUCH?",
+      "flag:beat stage10",
       "star:0",
       "star:1",
       "star:2",
       "star:3",
       "star:4",
       "star:5",
-      "flag:beat stage10",
-      "achievement:11 - VEXED MUCH?",
     ],
   },
   {
@@ -226,7 +227,7 @@ PROG: list[ProgressionNode] = [
       ],
     ],
     "receive": [
-      "achievement:27 - CURB STOMP",
+      "achievement:27:CURB STOMP",
     ],
   },
   {
@@ -243,7 +244,7 @@ PROG: list[ProgressionNode] = [
       ],
     ],
     "receive": [
-      "achievement:28 - LIFESAVER",
+      "achievement:28:LIFESAVER",
     ],
   },
   {
@@ -254,7 +255,7 @@ PROG: list[ProgressionNode] = [
       ],
     ],
     "receive": [
-      "achievement:29 - KEYLOGGER",
+      "achievement:29:KEYLOGGER",
     ],
   },
   {
@@ -265,7 +266,7 @@ PROG: list[ProgressionNode] = [
       ],
     ],
     "receive": [
-      "achievement:20 - BLOWN AWAY!",
+      "achievement:20:BLOWN AWAY!",
     ],
   },
 ]

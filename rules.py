@@ -45,25 +45,18 @@ def set_all_location_rules(world: World) -> None:
     if allConditions:
       rule = reduce(lambda a, s: a | s, allConditions)
 
-      # 1. Match all regular locations that belong to this room
-      # (e.g. "stage1 - level:stage2", "stage1 - star:1-1")
-      for loc_name in LOCATION_NAME_TO_ID:
-        if loc_name.startswith(f"{room} - "):
-          location = world.get_location(loc_name)
-          world.set_rule(location, rule)
-
-
-      # 2. Match event locations for this room
-      # (e.g. "stage1 - flag:beat stage1")
+      # Only match locations that belong to THIS node's own receive items
+      # (not every location that merely shares the same room name - other
+      # nodes for the same room have their own, different requirements).
       for itemInfo in node["receive"]:
-        if itemInfo.startswith("flag:"):
-          event_loc_name = f"{room} - {itemInfo}"
-          try:
-            location = world.get_location(event_loc_name)
-            world.set_rule(location, rule)
-
-          except KeyError:
-            pass
+        if itemInfo.startswith(("level:", "star:", "achievement:", "flag:")):
+          loc_name = f"{room} - {itemInfo}"
+          if loc_name in LOCATION_NAME_TO_ID or itemInfo.startswith("flag:"):
+            try:
+              location = world.get_location(loc_name)
+              world.set_rule(location, rule)
+            except KeyError:
+              pass
 
 
 

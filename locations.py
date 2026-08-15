@@ -28,6 +28,7 @@ for thing in PROG:
         (
           "level:",
           "star:",
+          "achievement:",
         )
       ):
         # itemName = itemInfo.split("#")[0]
