@@ -16,8 +16,10 @@ def set_all_rules(world: World) -> None:
   set_completion_condition(world)
 
 
-def set_all_entrance_rules(_world: World) -> None:
-  pass
+def set_all_entrance_rules(world: World) -> None:
+  for i in range(0, 11, 1):
+    entrance = world.get_entrance(f"Hub to stage{i}")
+    world.set_rule(entrance, Has(f"level:stage{i}"))
 
 
 def set_all_location_rules(world: World) -> None:

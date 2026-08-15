@@ -40,7 +40,6 @@ def create_and_connect_regions(world: World) -> None:
     stage_region = Region(stage_name, world.player, world.multiworld)
     world.multiworld.regions.append(stage_region)
 
-    # Connect hub to each stage (or add logic via rules if stages require specific access)
     hub_to_stage = Entrance(world.player, f"Hub to {stage_name}", hub)
     hub.exits.append(hub_to_stage)
     hub_to_stage.connect(stage_region)

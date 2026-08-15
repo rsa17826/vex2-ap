@@ -28,6 +28,9 @@ for thing in PROG:
 
 
 
+print(LOCATION_NAME_TO_ID, "LOCATION_NAME_TO_ID")
+
+
 class Vex2Location(Location):
   game: str = "Vex2"
 
