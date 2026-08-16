@@ -57,13 +57,8 @@ def set_all_location_rules(world: World) -> None:
         if itemInfo.startswith(("level:", "star:", "achievement:", "flag:")):
           loc_name = f"{room} - {itemInfo}"
           if loc_name in LOCATION_NAME_TO_ID or itemInfo.startswith("flag:"):
-            try:
-              location = world.get_location(loc_name)
-              world.set_rule(location, rule)
-
-            except KeyError:
-              pass
-
+            location = world.get_location(loc_name)
+            world.set_rule(location, rule)
 
 
 

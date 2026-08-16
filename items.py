@@ -25,7 +25,7 @@ for thing in PROG:
       itemName = itemInfo
       ITEM_COUNTS[itemName] = ITEM_COUNTS.get(itemName, 0) + 1
       if itemName not in ITEM_NAME_TO_ID:
-        if itemInfo.startswith(("level:",)):
+        if itemInfo.startswith(("level:", "move:")):
           DEFAULT_ITEM_CLASSIFICATIONS[itemName] = ItemClassification.progression
           ITEM_NAME_TO_ID[itemName] = _id_counter
           _id_counter += 1
