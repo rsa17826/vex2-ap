@@ -32,8 +32,7 @@ a = {
   ],
   #
   "1-0": [
-    [
-    ],
+    [],
   ],
   "1-1": [
     [
@@ -249,12 +248,10 @@ a = {
   ],
   #
   "10-0": [
-    [
-    ],
+    [],
   ],
   "10-1": [
-    [
-    ],
+    [],
   ],
   "10-2": [
     [
@@ -278,7 +275,20 @@ a = {
   ],
   "10-5": [
     [
-      "WIN",
+      "move:bounce",
+      "move:pulley",
+      "move:walljump",
+      "move:portal",
+    ],
+    [
+      "move:cannon",
+      "move:bounce",
+      "move:swim",
+      "move:portal",
+      "move:walljump",
+    ],
+    [
+      "move:portal",
     ],
   ],
   "10-win": [
