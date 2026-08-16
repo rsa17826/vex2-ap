@@ -224,6 +224,7 @@ a = {
     [
       "move:swim",
       "move:slide",
+      "move:walljump",
     ],
   ],
   "9-1": [
@@ -266,11 +267,13 @@ a = {
     [
       "move:cannon",
       "move:swim",
+      "move:bounce",
+      "move:walljump",
     ],
   ],
   "10-4": [
     [
-      "move:walljump",
+      # "move:walljump",
     ],
   ],
   "10-5": [
@@ -290,6 +293,7 @@ a = {
       "move:bounce",
       "move:swim",
       "move:portal",
+      "move:walljump",
     ],
     [
       "move:portal",
