@@ -58,17 +58,6 @@ def create_regular_locations(world: World) -> None:
 def create_events(world: World) -> None:
   from .items import Vex2Item
 
-  starcount = [1, 3, 2, 2, 1, 2, 3, 1, 2, 3, 6]
-  for room in range(0, 11, 1):
-    for i in range(0, starcount[room], 1):
-      _ = world.get_region(f"stage{room}").add_event(
-        location_name=f"stage{room} - star {i} can be got",
-        item_name="flag:starCanBeGot",
-        location_type=Vex2Location,
-        item_type=Vex2Item,
-      )
-
-
   for thing in PROG:
     for itemInfo in thing["receive"]:
       if itemInfo.startswith(("flag:",)):

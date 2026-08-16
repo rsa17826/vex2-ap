@@ -56,6 +56,12 @@ def set_all_location_rules(world: World) -> None:
           location = world.get_location(loc_name)
           world.set_rule(location, rule)
 
+        if itemInfo.startswith("star:"):
+          star_index = itemInfo.split(":", 1)[1]
+          event_name = f"{room} - star {star_index} can be got"
+          event_location = world.get_location(event_name)
+          world.set_rule(event_location, rule)
+
 
 
 
