@@ -59,6 +59,7 @@ class DeathLink(Toggle):
 class Vex2Options(PerGameCommonOptions):
   death_link: DeathLink
   all_stages_complete: AllStagesComplete
+  all_achievements: AllAchievements
 
 
 option_groups: list[OptionGroup] = [
