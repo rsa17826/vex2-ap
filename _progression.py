@@ -201,15 +201,40 @@ PROG: list[ProgressionNode] = [
     "room": "stage2",
     "requires": [
       [
-        "level:stage2",
+        "move:walljump",
+        "move:swim",
+        "move:bounce",
+      ],
+    ],
+    "receive": [
+      "star:0",
+    ],
+  },
+  {
+    "room": "stage2",
+    "requires": [
+      [
+        "move:walljump",
+        "move:swim",
+      ],
+    ],
+    "receive": [
+      "star:1",
+    ],
+  },
+  {
+    "room": "stage2",
+    "requires": [
+      [
+        "move:walljump",
+        "move:swim",
+        "move:bounce",
       ],
     ],
     "receive": [
       "achievement:3:ACT 2",
       "flag:beat stage2",
       "level:stage3",
-      "star:0",
-      "star:1",
     ],
   },
   {

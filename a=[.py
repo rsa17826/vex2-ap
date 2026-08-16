@@ -18,26 +18,6 @@ a = {
   },
   #
   #
-  "2-0": [
-    [
-      "move:walljump",
-      "move:swim",
-      "move:bounce",
-    ],
-  ],
-  "2-1": [
-    [
-      "move:walljump",
-      "move:swim",
-    ],
-  ],
-  "2-win": [
-    [
-      "move:walljump",
-      "move:swim",
-      "move:bounce",
-    ],
-  ],
   # NOTE all lv 3 can be fully done without hitting any checkpoints - add check for doing this
   "3-0": [
     [
