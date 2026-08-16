@@ -50,9 +50,6 @@ def set_all_location_rules(world: World) -> None:
     if allConditions:
       rule = reduce(lambda a, s: a | s, allConditions)
 
-      # Only match locations that belong to THIS node's own receive items
-      # (not every location that merely shares the same room name - other
-      # nodes for the same room have their own, different requirements).
       for itemInfo in node["receive"]:
         if itemInfo.startswith(("level:", "star:", "achievement:", "flag:")):
           loc_name = f"{room} - {itemInfo}"
