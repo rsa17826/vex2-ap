@@ -680,6 +680,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "level:stage5",
+        "move:cannon",
       ],
     ],
     "receive": [
