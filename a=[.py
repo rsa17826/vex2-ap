@@ -16,42 +16,7 @@ a = {
     "move:poledrop",
     "move:swim",
   },
-  "0-0": [
-    [
-      "move:walljump",
-      "move:bounce",
-      "move:slide",
-    ],
-  ],
-  "0-win": [
-    [
-      "move:walljump",
-      "move:bounce",
-      "move:slide",
-    ],
-  ],
   #
-  "1-0": [
-    [],
-  ],
-  "1-1": [
-    [
-      "move:walljump",
-    ],
-  ],
-  "1-2": [
-    [
-      "move:walljump",
-      "move:lever",
-      "move:bounce",
-    ],
-  ],
-  "1-win": [
-    [
-      "move:walljump",
-      "move:lever",
-    ],
-  ],
   #
   "2-0": [
     [

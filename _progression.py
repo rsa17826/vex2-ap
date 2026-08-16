@@ -119,10 +119,43 @@ PROG: list[ProgressionNode] = [
       ],
     ],
     "receive": [
-      "achievement:1:TUTORIAL",
       "achievement:12:VEXIPHOBIA",
+    ],
+  },
+  {
+    "room": "stage0",
+    "requires": [
+      [
+        "move:walljump",
+        "move:bounce",
+        "move:slide",
+      ],
+    ],
+    "receive": [
       "flag:beat stage0",
       "level:stage1",
+      "achievement:1:TUTORIAL",
+    ],
+  },
+  {
+    "room": "stage0",
+    "requires": [
+      [
+        "move:walljump",
+        "move:bounce",
+        "move:slide",
+      ],
+    ],
+    "receive": [
+      "star:0",
+    ],
+  },
+  {
+    "room": "stage1",
+    "requires": [
+      [],
+    ],
+    "receive": [
       "star:0",
     ],
   },
@@ -130,13 +163,35 @@ PROG: list[ProgressionNode] = [
     "room": "stage1",
     "requires": [
       [
-        "level:stage1",
+        "move:walljump",
       ],
     ],
     "receive": [
-      "star:0",
       "star:1",
+    ],
+  },
+  {
+    "room": "stage1",
+    "requires": [
+      [
+        "move:walljump",
+        "move:lever",
+        "move:bounce",
+      ],
+    ],
+    "receive": [
       "star:2",
+    ],
+  },
+  {
+    "room": "stage1",
+    "requires": [
+      [
+        "move:walljump",
+        "move:lever",
+      ],
+    ],
+    "receive": [
       "achievement:2:ACT 1",
       "flag:beat stage1",
       "level:stage2",
