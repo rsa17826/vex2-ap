@@ -103,6 +103,7 @@ PROG: list[ProgressionNode] = [
         "level:stage10",
       ],
     ],
+    # TODO needs to be able to also beat any
     "receive": [
       "achievement:16:BUZZ LIGHTYEAR",
       "achievement:24:OLYMPIAN",
