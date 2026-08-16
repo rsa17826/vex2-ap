@@ -362,23 +362,83 @@ PROG: list[ProgressionNode] = [
     "room": "stage6",
     "requires": [
       [
-        "level:stage6",
+        "move:walljump",
+        "move:swim",
+        "move:cannon",
+        "move:portal",
+        "move:pulley",
+      ],
+    ],
+    "receive": [
+      "star:0",
+    ],
+  },
+  {
+    "room": "stage6",
+    "requires": [
+      [
+        "move:walljump",
+        "move:pulley",
+        "move:swim",
+      ],
+    ],
+    "receive": [
+      "star:1",
+    ],
+  },
+  {
+    "room": "stage6",
+    "requires": [
+      [
+        "move:walljump",
+        "move:pulley",
+        "move:portal",
+        "move:swim",
+        "move:cannon",
+      ],
+    ],
+    "receive": [
+      "star:2",
+    ],
+  },
+  {
+    "room": "stage6",
+    "requires": [
+      [
+        "move:portal",
+        "move:walljump",
+        "move:pulley",
+        "move:swim",
+        "move:cannon",
       ],
     ],
     "receive": [
       "achievement:7:ACT 6",
       "flag:beat stage6",
       "level:stage7",
-      "star:0",
-      "star:1",
-      "star:2",
     ],
   },
   {
     "room": "stage7",
     "requires": [
       [
-        "level:stage7",
+        "move:kick",
+        "move:walljump",
+        "move:cannon",
+      ],
+    ],
+    "receive": [
+      "star:0",
+    ],
+  },
+  {
+    "room": "stage7",
+    "requires": [
+      [
+        "move:kick",
+        "move:cannon",
+        "move:walljump",
+        "move:polejump",
       ],
     ],
     "receive": [
@@ -392,7 +452,37 @@ PROG: list[ProgressionNode] = [
     "room": "stage8",
     "requires": [
       [
-        "level:stage8",
+        "move:lever",
+        "move:walljump",
+        "move:bounce",
+      ],
+    ],
+    "receive": [
+      "star:0",
+    ],
+  },
+  {
+    "room": "stage8",
+    "requires": [
+      [
+        "move:lever",
+        "move:walljump",
+        "move:bounce",
+      ],
+    ],
+    "receive": [
+      "star:1",
+    ],
+  },
+  {
+    "room": "stage8",
+    "requires": [
+      [
+        "move:lever",
+        "move:walljump",
+        "move:bounce",
+        "move:swim",
+        "move:kick",
       ],
     ],
     "receive": [
@@ -407,15 +497,75 @@ PROG: list[ProgressionNode] = [
     "room": "stage9",
     "requires": [
       [
-        "level:stage9",
+        "move:swim",
+        "move:slide",
+        "move:walljump",
+      ],
+    ],
+    "receive": [
+      "star:0",
+    ],
+  },
+  {
+    "room": "stage9",
+    "requires": [
+      [
+        "move:slide",
+        "move:polejump",
+        "move:walljump",
+      ],
+    ],
+    "receive": [
+      "star:1",
+    ],
+  },
+  {
+    "room": "stage9",
+    "requires": [
+      [
+        "move:slide",
+        "move:walljump",
+      ],
+    ],
+    "receive": [
+      "star:2",
+    ],
+  },
+  {
+    "room": "stage9",
+    "requires": [
+      [
+        "move:slide",
+        "move:walljump",
+        "move:pulley",
       ],
     ],
     "receive": [
       "achievement:10:ACT 9",
       "flag:beat stage9",
       "level:stage10",
+    ],
+  },
+  {
+    "room": "stage10",
+    "requires": [
+      [],
+    ],
+    "receive": [
       "star:0",
       "star:1",
+    ],
+  },
+  {
+    "room": "stage10",
+    "requires": [
+      [
+        "move:walljump",
+        "move:bounce",
+        "move:pulley",
+      ],
+    ],
+    "receive": [
       "star:2",
     ],
   },
@@ -423,18 +573,51 @@ PROG: list[ProgressionNode] = [
     "room": "stage10",
     "requires": [
       [
-        "level:stage10",
+        "move:cannon",
+        "move:swim",
+        "move:bounce",
+        "move:walljump",
       ],
     ],
     "receive": [
+      "star:3",
+    ],
+  },
+  {
+    "room": "stage10",
+    "requires": [
+      [
+        # "move:walljump",
+      ],
+    ],
+    "receive": [
+      "star:4",
+    ],
+  },
+  {
+    "room": "stage10",
+    "requires": [
+      [
+        "move:bounce",
+        "move:pulley",
+        "move:walljump",
+        "move:portal",
+      ],
+      [
+        "move:cannon",
+        "move:bounce",
+        "move:swim",
+        "move:portal",
+        "move:walljump",
+      ],
+      [
+        "move:portal",
+      ],
+    ],
+    "receive": [
+      "star:5",
       "achievement:11:VEXED MUCH?",
       "flag:beat stage10",
-      "star:0",
-      "star:1",
-      "star:2",
-      "star:3",
-      "star:4",
-      "star:5",
     ],
   },
   {
