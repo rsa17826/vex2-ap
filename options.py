@@ -17,6 +17,7 @@ option_presets: dict[str, dict[str, bool | int]] = {
   "main": {
     "all_stages_complete": True,
     "death_link": True,
+    "all_achievements": False,
   },
 }
 
@@ -32,6 +33,14 @@ class AllStagesComplete(Toggle):
 
   display_name: str = "AllStagesComplete"
   default: bool = cast(bool, option_presets["main"]["all_stages_complete"])
+
+class AllAchievements(Toggle):
+  """
+  all_achievements
+  """
+
+  display_name: str = "AllAchievements"
+  default: bool = cast(bool, option_presets["main"]["all_achievements"])
 
 
 class DeathLink(Toggle):
@@ -63,6 +72,7 @@ option_groups: list[OptionGroup] = [
     "Win Condition",
     [
       AllStagesComplete,
+      AllAchievements,
     ],
   ),
 ]
