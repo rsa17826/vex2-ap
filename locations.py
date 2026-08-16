@@ -72,7 +72,7 @@ def create_events(world: World) -> None:
   for thing in PROG:
     for itemInfo in thing["receive"]:
       if itemInfo.startswith(("flag:",)):
-        event_name = itemInfo7
+        event_name = itemInfo
 
         _ = world.get_region(thing["room"]).add_event(
           location_name=f"{thing['room']} - {event_name}",
