@@ -2,3 +2,8 @@
 @regex (True|False)\s+(?:or|and)\s+world\.options\.\w+
 @errgroup 1
 @info remove "$1" when option fixed
+
+@regex "move:(?!pulley|swim|walljump|bounce|slide|lever|polejump|cannon|portal|kick)
+@errgroup 0
+@info asd
+@endregex

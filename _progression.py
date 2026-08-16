@@ -639,12 +639,20 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "level:stage1",
+        "move:walljump",
+        "move:lever",
+        "move:bounce",
       ],
       [
         "level:stage2",
+        "move:walljump",
+        "move:swim",
+        "move:bounce",
       ],
       [
         "level:stage10",
+        "move:bounce",
+        "move:cannon",
       ],
     ],
     "receive": [
@@ -656,6 +664,10 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "level:stage10",
+        "move:bounce",
+        "move:cannon",
+        "move:swim",
+        "move:pulley",
       ],
     ],
     "receive": [
