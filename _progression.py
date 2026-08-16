@@ -290,13 +290,37 @@ PROG: list[ProgressionNode] = [
     "room": "stage4",
     "requires": [
       [
-        "level:stage4",
+        "move:swim",
+      ],
+    ],
+    "receive": [
+      "star:0",
+    ],
+  },
+  {
+    "room": "stage4",
+    "requires": [
+      [
+        "move:swim",
+        "move:slide",
+        "move:walljump",
       ],
     ],
     "receive": [
       "achievement:5:ACT 4",
       "flag:beat stage4",
       "level:stage5",
+    ],
+  },
+  {
+    "room": "stage5",
+    "requires": [
+      [
+        "move:walljump",
+        "move:cannon",
+      ],
+    ],
+    "receive": [
       "star:0",
     ],
   },
@@ -304,15 +328,34 @@ PROG: list[ProgressionNode] = [
     "room": "stage5",
     "requires": [
       [
-        "level:stage5",
+        "move:cannon",
+        "move:lever",
+        "move:walljump",
+      ],
+    ],
+    "receive": [
+      "star:1",
+    ],
+  },
+  {
+    "room": "stage5",
+    "requires": [
+      [
+        "move:cannon",
+        "move:portal",
+        "move:polejump",
+        "move:walljump",
+      ],
+      [
+        "move:cannon",
+        "move:lever",
+        "move:walljump",
       ],
     ],
     "receive": [
       "achievement:6:ACT 5",
       "flag:beat stage5",
       "level:stage6",
-      "star:0",
-      "star:1",
     ],
   },
   {

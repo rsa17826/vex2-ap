@@ -19,47 +19,8 @@ a = {
   #
   #
   # NOTE all lv 3 can be fully done without hitting any checkpoints - add check for doing this
-  "3-win": [],
   #
-  "4-0": [
-    [
-      "move:swim",
-    ],
-  ],
-  "4-win": [
-    [
-      "move:swim",
-      "move:slide",
-      "move:walljump",
-    ],
-  ],
   #
-  "5-0": [
-    [
-      "move:walljump",
-      "move:cannon",
-    ],
-  ],
-  "5-1": [
-    [
-      "move:cannon",
-      "move:lever",
-      "move:walljump",
-    ],
-  ],
-  "5-win": [
-    [
-      "move:cannon",
-      "move:portal",
-      "move:polejump",
-      "move:walljump",
-    ],
-    [
-      "move:cannon",
-      "move:lever",
-      "move:walljump",
-    ],
-  ],
   #
   "6-0": [
     [
