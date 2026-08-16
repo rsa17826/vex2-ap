@@ -46,37 +46,37 @@ PROG: list[ProgressionNode] = [
     "room": "hub",
     "requires": [
       [
-        "level:stage0",
+        "flag:beat stage0",
       ],
       [
-        "level:stage1",
+        "flag:beat stage1",
       ],
       [
-        "level:stage2",
+        "flag:beat stage2",
       ],
       [
-        "level:stage3",
+        "flag:beat stage3",
       ],
       [
-        "level:stage4",
+        "flag:beat stage4",
       ],
       [
-        "level:stage5",
+        "flag:beat stage5",
       ],
       [
-        "level:stage6",
+        "flag:beat stage6",
       ],
       [
-        "level:stage7",
+        "flag:beat stage7",
       ],
       [
-        "level:stage8",
+        "flag:beat stage8",
       ],
       [
-        "level:stage9",
+        "flag:beat stage9",
       ],
       [
-        "level:stage10",
+        "flag:beat stage10",
       ],
     ],
     "receive": [
@@ -116,6 +116,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "level:stage0",
+        "flag:beat stage0",
       ],
     ],
     "receive": [
@@ -621,10 +622,12 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "hub",
+    "room": "stage0",
     "requires": [
       [
-        "level:stage0",
+        "move:walljump",
+        "move:bounce",
+        "move:slide",
       ],
     ],
     "receive": [
