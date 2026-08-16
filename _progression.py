@@ -456,6 +456,7 @@ PROG: list[ProgressionNode] = [
       [
         "move:lever",
         "move:walljump",
+        "move:slide",
         "move:bounce",
       ],
     ],
@@ -469,6 +470,7 @@ PROG: list[ProgressionNode] = [
       [
         "move:lever",
         "move:walljump",
+        "move:slide",
         "move:bounce",
       ],
     ],
@@ -483,6 +485,7 @@ PROG: list[ProgressionNode] = [
         "move:lever",
         "move:walljump",
         "move:bounce",
+        "move:slide",
         "move:swim",
         "move:kick",
       ],
