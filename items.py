@@ -19,22 +19,41 @@ for filler in fillers:
 ITEM_COUNTS: dict[str, int] = {}
 _id_counter = 1
 
+
+def addItem(itemInfo: str):
+  global _id_counter
+  ITEM_COUNTS[itemInfo] = ITEM_COUNTS.get(itemInfo, 0) + 1
+  if itemInfo not in ITEM_NAME_TO_ID:
+    if itemInfo.startswith(("level:", "move:")):
+      DEFAULT_ITEM_CLASSIFICATIONS[itemInfo] = ItemClassification.progression
+      ITEM_NAME_TO_ID[itemInfo] = _id_counter
+      _id_counter += 1
+    elif itemInfo.startswith(("flag:", "star:", "achievement:")):
+      return
+    else:
+      print(itemInfo, "not used")
+
+
+
+for item in (
+  "move:bounce",
+  "move:cannon",
+  "move:kick",
+  "move:lever",
+  "move:polejump",
+  "move:portal",
+  "move:pulley",
+  "move:slide",
+  "move:swim",
+  "move:walljump",
+):
+  addItem(item)
+
+
 for thing in PROG:
   if "receive" in thing:
     for itemInfo in thing["receive"]:
-      itemName = itemInfo
-      ITEM_COUNTS[itemName] = ITEM_COUNTS.get(itemName, 0) + 1
-      if itemName not in ITEM_NAME_TO_ID:
-        if itemInfo.startswith(("level:", "move:")):
-          DEFAULT_ITEM_CLASSIFICATIONS[itemName] = ItemClassification.progression
-          ITEM_NAME_TO_ID[itemName] = _id_counter
-          _id_counter += 1
-        elif itemInfo.startswith(("flag:", "star:", "achievement:")):
-          continue
-        else:
-          print(itemName, "not used")
-
-
+      addItem(itemInfo)
 
 
 
