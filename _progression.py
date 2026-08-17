@@ -286,7 +286,7 @@ PROG: list[ProgressionNode] = [
       "achievement:4:ACT 3",
       "flag:beat stage3",
       "level:stage4",
-      "achievement:-1:LEVEL 3 NO CHECKPOINTS",
+      "achievement -1:LEVEL 3 NO CHECKPOINTS",
     ],
   },
   {
