@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from . import game_data as data
 from ._progression import PROG
 from BaseClasses import Location
 
@@ -11,24 +12,16 @@ _id_counter = 1
 for thing in PROG:
   if "receive" in thing:
     for itemInfo in thing["receive"]:
-      if itemInfo.startswith(
-        (
-          "level:",
-          "star:",
-          "achievement:",
-        )
-      ):
-        # itemName = itemInfo.split("#")[0]
+      if itemInfo.startswith(data.LOCATION_ITEM_PREFIXES):
         itemName = f"{thing['room']} - {itemInfo}"
         if itemName not in LOCATION_NAME_TO_ID:
           LOCATION_NAME_TO_ID[itemName] = _id_counter
           _id_counter += 1
 
-
-
-
-
-print(LOCATION_NAME_TO_ID, "LOCATION_NAME_TO_ID")
+# NOTE: game_data.EVENTS entries are logic events, not real shuffled
+# locations, so they are intentionally NOT added to LOCATION_NAME_TO_ID here
+# -- see create_events() below, which uses add_event() the same way
+# _progression.py "flag:"-prefixed receives do.
 
 
 class Vex2Location(Location):
@@ -58,20 +51,25 @@ def create_regular_locations(world: World) -> None:
 def create_events(world: World) -> None:
   from .items import Vex2Item
 
-  starcount = [1, 3, 2, 2, 1, 2, 3, 1, 2, 3, 6]
-  for room in range(0, 11, 1):
-    for i in range(0, starcount[room], 1):
-      _ = world.get_region(f"stage{room}").add_event(
-        location_name=f"stage{room} - star {i} can be got",
-        item_name="flag:starCanBeGot",
-        location_type=Vex2Location,
-        item_type=Vex2Item,
-      )
+  # Standalone events declared directly in game_data.py (game-topology
+  # specific, but expressed generically -- the engine just walks the list).
+  for event in data.EVENTS:
+    location_name = event["location_name"]
+    if not location_name.startswith(event["room"]):
+      location_name = f"{event['room']} - {location_name}"
 
+    _ = world.get_region(event["room"]).add_event(
+      location_name=location_name,
+      item_name=event["item_name"],
+      location_type=Vex2Location,
+      item_type=Vex2Item,
+    )
 
+  # Events derived from _progression.py "receive" entries flagged as
+  # event-only (e.g. "flag:" prefixed items).
   for thing in PROG:
     for itemInfo in thing["receive"]:
-      if itemInfo.startswith(("flag:",)):
+      if itemInfo.startswith(data.EVENT_ITEM_PREFIXES):
         event_name = itemInfo
 
         _ = world.get_region(thing["room"]).add_event(
@@ -80,6 +78,3 @@ def create_events(world: World) -> None:
           location_type=Vex2Location,
           item_type=Vex2Item,
         )
-
-
-

@@ -3,6 +3,7 @@ from __future__ import annotations
 from BaseClasses import Item, ItemClassification
 from worlds.AutoWorld import World
 
+from . import game_data as data
 from ._progression import PROG
 
 ITEM_NAME_TO_ID: dict[str, int] = {}
@@ -16,8 +17,7 @@ DEFAULT_ITEM_CLASSIFICATIONS: dict[str, ItemClassification] = {}
 FORCED_ITEMS: dict[tuple[str, str], str] = {}
 
 _id_counter = 99999
-fillers = ("trap:nothing",)
-for filler in fillers:
+for filler in data.FILLER_ITEMS:
   DEFAULT_ITEM_CLASSIFICATIONS[filler] = ItemClassification.trap if filler.startswith("trap:") else ItemClassification.filler
   ITEM_NAME_TO_ID[filler] = _id_counter
   _id_counter -= 1
@@ -31,29 +31,18 @@ def addItem(itemInfo: str):
   global _id_counter
   ITEM_COUNTS[itemInfo] = ITEM_COUNTS.get(itemInfo, 0) + 1
   if itemInfo not in ITEM_NAME_TO_ID:
-    if itemInfo.startswith(("level:", "move:")):
+    if itemInfo.startswith(data.POOL_PROGRESSION_PREFIXES):
       DEFAULT_ITEM_CLASSIFICATIONS[itemInfo] = ItemClassification.progression
       ITEM_NAME_TO_ID[itemInfo] = _id_counter
       _id_counter += 1
-    elif itemInfo.startswith(("flag:", "star:", "achievement:")):
+    elif itemInfo.startswith(data.NON_POOL_PREFIXES):
       return
     else:
       print(itemInfo, "not used")
 
 
 
-for item in (
-  "move:bounce",
-  "move:cannon",
-  "move:kick",
-  "move:lever",
-  "move:polejump",
-  "move:portal",
-  "move:pulley",
-  "move:slide",
-  "move:swim",
-  "move:walljump",
-):
+for item in data.CORE_ITEMS:
   addItem(item)
 
 
@@ -72,11 +61,11 @@ class Vex2Item(Item):
 
 
 def get_random_filler_item_name(world: World) -> str:
-  weights = [getattr(world.options, trap.split(":")[1]) for trap in fillers if hasattr(world.options, trap.split(":")[1])]
+  weights = [getattr(world.options, trap.split(":")[1]) for trap in data.FILLER_ITEMS if hasattr(world.options, trap.split(":")[1])]
   if not weights or sum(weights) == 0:
     return "trap:nothing"
 
-  return world.random.choices(fillers, weights=weights, k=1)[0]
+  return world.random.choices(data.FILLER_ITEMS, weights=weights, k=1)[0]
 
 
 def create_item_with_correct_classification(world: World, name: str) -> Vex2Item:

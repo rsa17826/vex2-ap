@@ -1,99 +1,44 @@
-from dataclasses import dataclass
-from typing import ClassVar, cast
+from dataclasses import dataclass, make_dataclass
+from typing import cast
 
-from Options import OptionDict, OptionGroup, PerGameCommonOptions, Range, Toggle
+from Options import OptionGroup, PerGameCommonOptions, Toggle
 
-# In this file, we define the options the player can pick.
-# The most common types of options are Toggle, Range and Choice.
+from .game_data import OPTIONS
 
-# Options will be in the game's template yaml.
-# They will be represented by checkboxes, sliders etc. on the game's options page on the website.
-# (Note: Options can also be made invisible from either of these places by overriding Option.visibility.
-#  Vex2 doesn't have an example of this, but this can be used for secret / hidden / advanced options.)
-
-# For further reading on options, you can also read the Options API Document:
-# https://github.com/ArchipelagoMW/Archipelago/blob/main/docs/options%20api.md
 option_presets: dict[str, dict[str, bool | int]] = {
-  "main": {
-    "all_stages_complete": True,
-    "death_link": True,
-    "all_achievements": False,
-    "weight_early_checks": False,
-  },
+  "main": {},
 }
 
 
-# The first type of Option we'll discuss is the Toggle.
-# A toggle is an option that can either be on or off. This will be represented by a checkbox on the website.
-# The default for a toggle is "off".
-# If you want a toggle to be on by default, you can use the "DefaultOnToggle" class instead of the "Toggle" class.
-class AllStagesComplete(Toggle):
-  """
-  game won when all levels have been beaten
-  """
-
-  display_name: str = "AllStagesComplete"
-  default: bool = cast(bool, option_presets["main"]["all_stages_complete"])
+option_classes = {}
+option_groups: list[OptionGroup] = []
+dataclass_fields = []
 
 
-class WeightEarlyChecks(Toggle):
-  """
-  makes some early checks more likely to have items that unlock more
-  can get gen failures from ~29.2% to ~6.3% (tested over 1000 gens)
-  presumably only useful for singleplayer
-  """
-
-  display_name: str = "WeightEarlyChecks"
-  default: bool = cast(bool, option_presets["main"]["weight_early_checks"])
+def pas(s: str) -> str:
+  return "".join(x[0].upper() + x[1:] for x in s.split("_"))
 
 
-class AllAchievements(Toggle):
-  """
-  game only won when all achievement checks obtained
-  """
+for group_name, opt in OPTIONS.items():
+  arr = []
+  for snake_name, doc, val in opt:
+    class_name = pas(snake_name)
+    option_presets["main"][snake_name] = val
 
-  display_name: str = "AllAchievements"
-  default: bool = cast(bool, option_presets["main"]["all_achievements"])
+    cls = type(
+      class_name,
+      (Toggle,),
+      {
+        "__doc__": doc,
+        "display_name": class_name,
+        "default": cast(bool, option_presets["main"][snake_name]),
+      },
+    )
 
+    option_classes[class_name] = cls
+    dataclass_fields.append((snake_name, cls))
+    arr.append(cls)
 
-class DeathLink(Toggle):
-  """
-  Links your fate to other players in the multiworld.
-  When enabled, if you die, everyone else on Death Link dies too. If they die, you die. Use with caution!
-  """
+  option_groups.append(OptionGroup(group_name, arr))
 
-  display_name: str = "DeathLink"
-  default: bool = cast(bool, option_presets["main"]["death_link"])
-
-
-# We must now define a dataclass inheriting from PerGameCommonOptions that we put all our options in.
-# This is in the format "option_name_in_snake_case: OptionClassName".
-@dataclass
-class Vex2Options(PerGameCommonOptions):
-  death_link: DeathLink
-  all_stages_complete: AllStagesComplete
-  all_achievements: AllAchievements
-  weight_early_checks: WeightEarlyChecks
-
-
-option_groups: list[OptionGroup] = [
-  OptionGroup(
-    "Gameplay",
-    [
-      DeathLink,
-    ],
-  ),
-  OptionGroup(
-    "?",
-    [
-      WeightEarlyChecks,
-    ],
-  ),
-  OptionGroup(
-    "Win Condition",
-    [
-      AllStagesComplete,
-      AllAchievements,
-    ],
-  ),
-]
+Vex2Options = make_dataclass("Vex2Options", dataclass_fields, bases=(PerGameCommonOptions,))

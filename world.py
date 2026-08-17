@@ -5,35 +5,9 @@ from Options import PerGameCommonOptions
 
 from worlds.AutoWorld import WebWorld, World
 
+from . import game_data as data
 from . import items, locations, regions, rules, web_world
 from . import options as Vex2_options
-
-choices = [
-  "level:stage10",
-  "level:stage1",
-  "move:cannon",
-  "level:stage5",
-  "move:lever",
-  "move:portal",
-  "level:stage4",
-  "move:bounce",
-  "move:swim",
-  "level:stage9",
-  "move:slide",
-  "level:stage2",
-  "move:walljump",
-  "level:stage8",
-  "move:pulley",
-  "level:stage7",
-  "level:stage6",
-  "level:stage0",
-  "move:polejump",
-  "level:stage3",
-  "move:kick",
-]
-
-# Using your percentage weights (or relative numerical weights)
-weights = [64.71, 11.98, 1.81, 1.80, 1.38, 1.30, 1.30, 1.28, 1.23, 1.22, 1.14, 1.14, 1.12, 1.12, 1.11, 1.10, 1.09, 1.09, 1.05, 1.04, 0.97]
 
 
 class Vex2World(World):
@@ -56,13 +30,13 @@ class Vex2World(World):
   options: Vex2_options.Vex2Options
   er_pairings: ClassVar[list[tuple[str, str]]] = []
   # Our world class must have a static location_name_to_id and item_name_to_id defined.
-  # We define these in regions.py and items.py respectively, so we just set them here.
+  # We define these in locations.py and items.py respectively, so we just set them here.
   location_name_to_id: ClassVar[dict[str, int]] = locations.LOCATION_NAME_TO_ID
   item_name_to_id: ClassVar[dict[str, int]] = items.ITEM_NAME_TO_ID
 
   # There is always one region that the generator starts from & assumes you can always go back to.
   # This defaults to "Menu", but you can change it by overriding origin_region_name.
-  origin_region_name: str = "hub"
+  origin_region_name: str = data.ORIGIN_REGION
 
   # Our world class must have certain functions ("steps") that get called during generation.
   # The main ones are: create_regions, set_rules, create_items.
@@ -83,15 +57,19 @@ class Vex2World(World):
   @override
   def generate_early(self) -> None:
     from .items import FORCED_ITEMS
+
     super().generate_early()
-    print(self.options.weight_early_checks, "self.options.weight_early_checks")
     if self.options.weight_early_checks:
-      for loc in (("hub", "level:stage0"), ("hub", "achievement:30:MICROWAVE")):
-        c = self.random.choices(choices, weights=weights, k=1)[0]
-        FORCED_ITEMS[loc] = c
-        idx = choices.index(c)
-        _ = choices.pop(idx)
-        _ = weights.pop(idx)
+      # Unzip the (item, weight) pairs freshly for each pick so that popping
+      # an already-picked item can't desync a shared choices/weights pair --
+      # they're always built from the single source of truth in game_config.
+      remaining_pool = list(data.EARLY_CHECK_POOL)
+      for loc in data.EARLY_CHECK_LOCATIONS:
+        pool_choices = [name for name, _weight in remaining_pool]
+        pool_weights = [weight for _name, weight in remaining_pool]
+        picked = self.random.choices(pool_choices, weights=pool_weights, k=1)[0]
+        FORCED_ITEMS[loc] = picked
+        remaining_pool = [(name, weight) for name, weight in remaining_pool if name != picked]
 
 
 
@@ -121,5 +99,6 @@ class Vex2World(World):
       **self.options.as_dict(*Vex2_options.option_presets["main"].keys()),
       "AP_ITEM_IDS": {v: k for k, v in ITEM_NAME_TO_ID.items()},
       "AP_LOCATION_IDS": {loc.name: loc.address for loc in self.multiworld.get_locations(self.player) if loc.address is not None},
+      **EXTRA_SLOT_DATA
     }
 
