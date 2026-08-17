@@ -39,7 +39,7 @@ class AllStagesComplete(Toggle):
 class WeightEarlyChecks(Toggle):
   """
   makes some early checks more likely to have items that unlock more
-  can get gen failures from ~29.2% to ~6.3%
+  can get gen failures from ~29.2% to ~6.3% (tested over 1000 gens)
   presumably only useful for singleplayer
   """
 
