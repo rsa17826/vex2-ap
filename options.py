@@ -29,7 +29,7 @@ option_presets: dict[str, dict[str, bool | int]] = {
 # If you want a toggle to be on by default, you can use the "DefaultOnToggle" class instead of the "Toggle" class.
 class AllStagesComplete(Toggle):
   """
-  all_stages_complete
+  game won when all levels have been beaten
   """
 
   display_name: str = "AllStagesComplete"
@@ -49,7 +49,7 @@ class WeightEarlyChecks(Toggle):
 
 class AllAchievements(Toggle):
   """
-  all_achievements
+  game only won when all achievement checks obtained
   """
 
   display_name: str = "AllAchievements"
