@@ -150,8 +150,7 @@ PROG: list[ProgressionNode] = [
     "receive": [
       "achievement:16:BUZZ LIGHTYEAR",
       "achievement:24:OLYMPIAN",
-      # NOTE don't want to have to do single level 22 times starting rando
-      "achievement:26:DOUBLE DOWN",
+      # "achievement:26:DOUBLE DOWN",
     ],
   },
   {
