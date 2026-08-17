@@ -18,7 +18,7 @@ PROG: list[ProgressionNode] = [
       ],
     ],
     "receive": [
-      "achievement:14 - STARGAZER",
+      "achievement:14:STARGAZER",
     ],
   },
   {
@@ -29,7 +29,7 @@ PROG: list[ProgressionNode] = [
       ],
     ],
     "receive": [
-      "achievement:15 - ASTRONAUT",
+      "achievement:15:ASTRONAUT",
     ],
   },
   {
