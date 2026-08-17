@@ -18,6 +18,7 @@ option_presets: dict[str, dict[str, bool | int]] = {
     "all_stages_complete": True,
     "death_link": True,
     "all_achievements": False,
+    "weight_early_checks": False,
   },
 }
 
@@ -33,6 +34,18 @@ class AllStagesComplete(Toggle):
 
   display_name: str = "AllStagesComplete"
   default: bool = cast(bool, option_presets["main"]["all_stages_complete"])
+
+
+class WeightEarlyChecks(Toggle):
+  """
+  makes some early checks more likely to have items that unlock more
+  can get gen failures from ~29.2% to ~6.3%
+  presumably only useful for singleplayer
+  """
+
+  display_name: str = "WeightEarlyChecks"
+  default: bool = cast(bool, option_presets["main"]["weight_early_checks"])
+
 
 class AllAchievements(Toggle):
   """
@@ -60,6 +73,7 @@ class Vex2Options(PerGameCommonOptions):
   death_link: DeathLink
   all_stages_complete: AllStagesComplete
   all_achievements: AllAchievements
+  weight_early_checks: WeightEarlyChecks
 
 
 option_groups: list[OptionGroup] = [
@@ -67,6 +81,12 @@ option_groups: list[OptionGroup] = [
     "Gameplay",
     [
       DeathLink,
+    ],
+  ),
+  OptionGroup(
+    "?",
+    [
+      WeightEarlyChecks,
     ],
   ),
   OptionGroup(

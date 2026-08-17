@@ -8,6 +8,33 @@ from worlds.AutoWorld import WebWorld, World
 from . import items, locations, regions, rules, web_world
 from . import options as Vex2_options
 
+choices = [
+  "level:stage10",
+  "level:stage1",
+  "move:cannon",
+  "level:stage5",
+  "move:lever",
+  "move:portal",
+  "level:stage4",
+  "move:bounce",
+  "move:swim",
+  "level:stage9",
+  "move:slide",
+  "level:stage2",
+  "move:walljump",
+  "level:stage8",
+  "move:pulley",
+  "level:stage7",
+  "level:stage6",
+  "level:stage0",
+  "move:polejump",
+  "level:stage3",
+  "move:kick",
+]
+
+# Using your percentage weights (or relative numerical weights)
+weights = [64.71, 11.98, 1.81, 1.80, 1.38, 1.30, 1.30, 1.28, 1.23, 1.22, 1.14, 1.14, 1.12, 1.12, 1.11, 1.10, 1.09, 1.09, 1.05, 1.04, 0.97]
+
 
 class Vex2World(World):
   """
@@ -52,6 +79,21 @@ class Vex2World(World):
   @override
   def create_items(self) -> None:
     items.create_all_items(self)
+
+  @override
+  def generate_early(self) -> None:
+    from .items import FORCED_ITEMS
+    super().generate_early()
+    print(self.options.weight_early_checks, "self.options.weight_early_checks")
+    if self.options.weight_early_checks:
+      for loc in (("hub", "level:stage0"), ("hub", "achievement:30:MICROWAVE")):
+        c = self.random.choices(choices, weights=weights, k=1)[0]
+        FORCED_ITEMS[loc] = c
+        idx = choices.index(c)
+        _ = choices.pop(idx)
+        _ = weights.pop(idx)
+
+
 
   # Our world class must also have a create_item function that can create any one of our items by name at any time.
   # We also put this in a different file, the same one that create_items is in.
