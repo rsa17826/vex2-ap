@@ -35,6 +35,17 @@ PROG: list[ProgressionNode] = [
   {
     "room": "hub",
     "requires": [
+      [
+        "flag:starCanBeGot#26",
+      ],
+    ],
+    "receive": [
+      "achievement:16:BUZZ LIGHTYEAR",
+    ],
+  },
+  {
+    "room": "hub",
+    "requires": [
       [],
     ],
     "receive": [
@@ -101,13 +112,44 @@ PROG: list[ProgressionNode] = [
         "level:stage8",
         "level:stage9",
         "level:stage10",
+        "flag:beat stage0",
+        "flag:beat stage1",
+        "flag:beat stage2",
+        "flag:beat stage3",
+        "flag:beat stage4",
+        "flag:beat stage5",
+        "flag:beat stage6",
+        "flag:beat stage7",
+        "flag:beat stage8",
+        "flag:beat stage9",
+        "flag:beat stage10",
       ],
     ],
-    # TODO needs to be able to also beat any
+    "receive": [
+      "achievement:25:PERFECTIONIST",
+      "achievement:24:OLYMPIAN",
+    ],
+  },
+  {
+    "room": "hub",
+    "requires": [
+      [
+        "level:stage0",
+        "level:stage1",
+        "level:stage2",
+        "level:stage3",
+        "level:stage4",
+        "level:stage5",
+        "level:stage6",
+        "level:stage7",
+        "level:stage8",
+        "level:stage9",
+        "level:stage10",
+      ],
+    ],
     "receive": [
       "achievement:16:BUZZ LIGHTYEAR",
       "achievement:24:OLYMPIAN",
-      "achievement:25:PERFECTIONIST",
       # NOTE don't want to have to do single level 22 times starting rando
       "achievement:26:DOUBLE DOWN",
     ],
