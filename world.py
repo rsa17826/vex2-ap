@@ -19,7 +19,7 @@ class Vex2World(World):
   # The docstring should contain a description of the game, to be displayed on the WebHost.
 
   # You must override the "game" field to say the name of the game.
-  game: ClassVar[str] = "Vex2"
+  game: ClassVar[str] = data.GAME
 
   # The WebWorld is a definition class that governs how this world will be displayed on the website.
   web: ClassVar[WebWorld] = web_world.Vex2WebWorld()

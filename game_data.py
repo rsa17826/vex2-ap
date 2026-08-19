@@ -32,6 +32,7 @@ from ._progression import PROG
 # ---------------------------------------------------------------------------
 # Region graph
 # ---------------------------------------------------------------------------
+GAME = "Vex2"
 
 # The region the player starts in / can always return to.
 ORIGIN_REGION: str = "hub"
@@ -246,12 +247,9 @@ def validate_config() -> None:
       if conn[key] not in region_set:
         errors.append(f"CONNECTIONS entry {conn} references region '{conn[key]}' not declared in REGIONS.")
 
-
-
   for event in EVENTS:
     if event["room"] not in region_set:
       errors.append(f"EVENTS entry {event} references room '{event['room']}' not declared in REGIONS.")
-
 
   seen_event_locations: set[str] = set()
   for event in EVENTS:
@@ -265,7 +263,6 @@ def validate_config() -> None:
   for node in PROG:
     if node["room"] not in region_set:
       errors.append(f"_progression.py references unknown room '{node['room']}' not declared in REGIONS.")
-
 
   # --- Build the universe of items that are actually ever granted ---
   granted_items: set[str] = set(CORE_ITEMS)
@@ -281,7 +278,6 @@ def validate_config() -> None:
   for node in PROG:
     for group in node.get("requires", []):
       referenced_items.update(group)
-
 
   for conn in CONNECTIONS:
     referenced_items.update(_all_requires_items(conn.get("requires")))
@@ -311,7 +307,6 @@ def validate_config() -> None:
   for room, receive_name in EARLY_CHECK_LOCATIONS:
     if (room, receive_name) not in all_receive_pairs:
       errors.append(f"EARLY_CHECK_LOCATIONS entry ('{room}', '{receive_name}') does not match any (room, receive) pair declared in _progression.py.")
-
 
   # --- EARLY_CHECK_POOL items must be real, known items. ---
   early_pool_names = {name for name, _weight in EARLY_CHECK_POOL}
@@ -346,10 +341,6 @@ def validate_config() -> None:
               expects a linked event location '{expected_location}' via
               LINKED_EVENT_TEMPLATES, but no such location is declared in EVENTS."""
             )
-
-
-
-
 
   # --- Completion items must actually be granted somewhere. ---
   missing_completion_items = set(COMPLETION_REQUIRED_ITEMS) - granted_items
