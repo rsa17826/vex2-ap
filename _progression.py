@@ -595,6 +595,12 @@ PROG: list[ProgressionNode] = [
         "move:bounce",
         "move:pulley",
       ],
+      [
+        "move:cannon",
+        "move:swim",
+        "move:bounce",
+        "move:walljump",
+      ],
     ],
     "receive": [
       "star:2",
