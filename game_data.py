@@ -241,7 +241,7 @@ class DataConsistencyError(Exception):
   MUST match everywhere it's represented, instead of allowing generation to
   potentially proceed with incorrect/incomplete data."""
 
-# TODO make check for if locations overite each other, being same room, same receive
+
 def _all_requires_items(requires: list[list[str]] | None) -> set[str]:
   if not requires:
     return set()
@@ -321,6 +321,46 @@ def validate_config() -> None:
 
   # --- CORE_ITEMS should not overlap items already granted via PROG receive
   #     under a location/event prefix, since that would double-declare it. ---
+
+  # --- No two PROG nodes may grant the same (room, item) pair when that
+  #     item is a real placed location (LOCATION_ITEM_PREFIXES). Each such
+  #     pair is a location identity -- granting it from two different nodes
+  #     means two different logic rules would silently overwrite each
+  #     other's item placement at that single location. ---
+  seen_location_pairs: dict[tuple[str, str], dict] = {}
+  for node in PROG:
+    room = node["room"]
+    for item in node.get("receive", []):
+      if not item.startswith(LOCATION_ITEM_PREFIXES):
+        continue
+
+      key = (room, item)
+      if key in seen_location_pairs:
+        errors.append(
+          f"""Location collision: room '{room}' item '{item}' is granted by
+          more than one _progression.py node ({seen_location_pairs[key]} and
+          {node}), which would create two locations that overwrite each
+          other's item placement."""
+        )
+      else:
+        seen_location_pairs[key] = node
+
+
+
+  # --- EVENTS locations must not collide with PROG-derived (room, item)
+  #     locations either -- same room + same underlying item name means the
+  #     event location and a PROG receive-derived location would be the
+  #     same physical location declared twice, from different sources. ---
+  for event in EVENTS:
+    key = (event["room"], event["item_name"])
+    if key in seen_location_pairs:
+      errors.append(
+        f"""Location collision: EVENTS entry {event} declares room
+        '{event["room"]}' item '{event["item_name"]}', which is also
+        granted by _progression.py node {seen_location_pairs[key]} --
+        both would resolve to the same (room, item) location."""
+      )
+
 
   # --- EARLY_CHECK_LOCATIONS must correspond to a real (room, receive) pair. ---
   all_receive_pairs = {(node["room"], item) for node in PROG for item in node.get("receive", [])}

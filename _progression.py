@@ -131,29 +131,6 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "hub",
-    "requires": [
-      [
-        "level:stage0",
-        "level:stage1",
-        "level:stage2",
-        "level:stage3",
-        "level:stage4",
-        "level:stage5",
-        "level:stage6",
-        "level:stage7",
-        "level:stage8",
-        "level:stage9",
-        "level:stage10",
-      ],
-    ],
-    "receive": [
-      "achievement:16:BUZZ LIGHTYEAR",
-      "achievement:24:OLYMPIAN",
-      # "achievement:26:DOUBLE DOWN",
-    ],
-  },
-  {
     "room": "stage0",
     "requires": [
       [
