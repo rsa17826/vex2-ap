@@ -241,7 +241,7 @@ class DataConsistencyError(Exception):
   MUST match everywhere it's represented, instead of allowing generation to
   potentially proceed with incorrect/incomplete data."""
 
-
+# TODO make check for if locations overite each other, being same room, same receive
 def _all_requires_items(requires: list[list[str]] | None) -> set[str]:
   if not requires:
     return set()
