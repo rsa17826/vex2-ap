@@ -194,22 +194,37 @@ EARLY_CHECK_POOL: list[tuple[str, float]] = [
   ("move:kick", 0.97),
 ]
 
+from Options import Toggle
 
 OPTIONS = {
-  "Gameplay": (("all_stages_complete", "game won when all levels have been beaten", True),),
+  "Gameplay": (
+    (
+      "all_stages_complete",
+      "game won when all levels have been beaten",
+      True,
+      Toggle,
+    ),
+  ),
   "?": (
     (
       "weight_early_checks",
       "makes some early checks more likely to have items that unlock more\ncan get gen failures from ~29.2% to ~6.3% (tested over 1000 gens)\npresumably only useful for singleplayer",
       True,
+      Toggle,
     ),
   ),
   "Win Condition": (
-    ("all_achievements", "game only won when all achievement checks obtained", False),
+    (
+      "all_achievements",
+      "game only won when all achievement checks obtained",
+      False,
+      Toggle,
+    ),
     (
       "death_link",
       "Links your fate to other players in the multiworld.\nWhen enabled, if you die, everyone else on Death Link dies too. If they die, you die. Use with caution!",
       True,
+      Toggle,
     ),
   ),
 }
@@ -247,9 +262,12 @@ def validate_config() -> None:
       if conn[key] not in region_set:
         errors.append(f"CONNECTIONS entry {conn} references region '{conn[key]}' not declared in REGIONS.")
 
+
+
   for event in EVENTS:
     if event["room"] not in region_set:
       errors.append(f"EVENTS entry {event} references room '{event['room']}' not declared in REGIONS.")
+
 
   seen_event_locations: set[str] = set()
   for event in EVENTS:
@@ -263,6 +281,7 @@ def validate_config() -> None:
   for node in PROG:
     if node["room"] not in region_set:
       errors.append(f"_progression.py references unknown room '{node['room']}' not declared in REGIONS.")
+
 
   # --- Build the universe of items that are actually ever granted ---
   granted_items: set[str] = set(CORE_ITEMS)
@@ -278,6 +297,7 @@ def validate_config() -> None:
   for node in PROG:
     for group in node.get("requires", []):
       referenced_items.update(group)
+
 
   for conn in CONNECTIONS:
     referenced_items.update(_all_requires_items(conn.get("requires")))
@@ -307,6 +327,7 @@ def validate_config() -> None:
   for room, receive_name in EARLY_CHECK_LOCATIONS:
     if (room, receive_name) not in all_receive_pairs:
       errors.append(f"EARLY_CHECK_LOCATIONS entry ('{room}', '{receive_name}') does not match any (room, receive) pair declared in _progression.py.")
+
 
   # --- EARLY_CHECK_POOL items must be real, known items. ---
   early_pool_names = {name for name, _weight in EARLY_CHECK_POOL}
@@ -341,6 +362,10 @@ def validate_config() -> None:
               expects a linked event location '{expected_location}' via
               LINKED_EVENT_TEMPLATES, but no such location is declared in EVENTS."""
             )
+
+
+
+
 
   # --- Completion items must actually be granted somewhere. ---
   missing_completion_items = set(COMPLETION_REQUIRED_ITEMS) - granted_items
