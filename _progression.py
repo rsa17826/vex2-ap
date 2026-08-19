@@ -489,7 +489,6 @@ PROG: list[ProgressionNode] = [
       "achievement:8:ACT 7",
       "flag:beat stage7",
       "level:stage8",
-      "star:0",
     ],
   },
   {
@@ -504,19 +503,6 @@ PROG: list[ProgressionNode] = [
     ],
     "receive": [
       "star:0",
-    ],
-  },
-  {
-    "room": "stage8",
-    "requires": [
-      [
-        "move:lever",
-        "move:walljump",
-        "move:slide",
-        "move:bounce",
-      ],
-    ],
-    "receive": [
       "star:1",
     ],
   },
@@ -536,8 +522,6 @@ PROG: list[ProgressionNode] = [
       "achievement:9:ACT 8",
       "flag:beat stage8",
       "level:stage9",
-      "star:0",
-      "star:1",
     ],
   },
   {
