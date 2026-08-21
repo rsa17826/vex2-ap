@@ -549,7 +549,7 @@ PROG: list[ProgressionNode] = [
       ],
     ],
     "receive": [
-      "achievement:10:ACT 9",
+      "achievement:10:ACT MASTER",
       "flag:beat stage9",
       "level:stage10",
     ],
