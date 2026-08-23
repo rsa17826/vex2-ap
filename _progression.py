@@ -710,3 +710,4 @@ PROG: list[ProgressionNode] = [
 # TODO
 # move:push
 # move:key
+# move:fan
