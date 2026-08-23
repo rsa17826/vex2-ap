@@ -196,7 +196,7 @@ PROG: list[ProgressionNode] = [
       [
         "move:walljump",
         "move:lever",
-        "move:bounce",
+        # "move:bounce",
       ],
     ],
     "receive": [
@@ -694,6 +694,12 @@ PROG: list[ProgressionNode] = [
         "level:stage5",
         "move:cannon",
         "move:walljump",
+      ],
+      [
+        "level:stage4",
+        "move:walljump",
+        "move:swim",
+        "???",
       ],
     ],
     "receive": [
