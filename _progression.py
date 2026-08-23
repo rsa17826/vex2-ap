@@ -699,7 +699,7 @@ PROG: list[ProgressionNode] = [
         "level:stage4",
         "move:walljump",
         "move:swim",
-        "???",
+        "move:slide",
       ],
     ],
     "receive": [
