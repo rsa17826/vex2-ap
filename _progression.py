@@ -659,12 +659,18 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "stage0",
+    "room": "hub",
     "requires": [
       [
+        "level:stage0",
         "move:walljump",
         "move:bounce",
         "move:slide",
+      ],
+      [
+        "level:stage1",
+        "move:walljump",
+        "move:swim",
       ],
     ],
     "receive": [
@@ -704,6 +710,11 @@ PROG: list[ProgressionNode] = [
   {
     "room": "hub",
     "requires": [
+      [
+        "level:stage9",
+        "move:swim",
+        "move:slide",
+      ],
       [
         "level:stage10",
         "move:bounce",
