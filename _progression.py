@@ -213,7 +213,7 @@ PROG: list[ProgressionNode] = [
     ],
     "receive": [
       "achievement:2:ACT 1",
-      "achievement:-1:VEXIPHOBIAX1",
+      "achievement:31:VEXIPHOBIAX1",
       "flag:beat stage1",
       "level:stage2",
     ],
@@ -256,7 +256,7 @@ PROG: list[ProgressionNode] = [
       "achievement:3:ACT 2",
       "flag:beat stage2",
       "level:stage3",
-      "achievement:-1:VEXIPHOBIAX2",
+      "achievement:32:VEXIPHOBIAX2",
     ],
   },
   {
@@ -306,7 +306,7 @@ PROG: list[ProgressionNode] = [
       "achievement:4:ACT 3",
       "flag:beat stage3",
       "level:stage4",
-      "achievement:17:VEXIPHOBIAX3",
+      "achievement:33:VEXIPHOBIAX3",
     ],
   },
   {
@@ -380,7 +380,7 @@ PROG: list[ProgressionNode] = [
       "achievement:6:ACT 5",
       "flag:beat stage5",
       "level:stage6",
-      "achievement:-1:VEXIPHOBIAX5",
+      "achievement:34:VEXIPHOBIAX5",
     ],
   },
   {
@@ -441,7 +441,7 @@ PROG: list[ProgressionNode] = [
       "achievement:7:ACT 6",
       "flag:beat stage6",
       "level:stage7",
-      "achievement:-1:VEXIPHOBIAX6",
+      "achievement:35:VEXIPHOBIAX6",
     ],
   },
   {
@@ -471,7 +471,7 @@ PROG: list[ProgressionNode] = [
       "achievement:8:ACT 7",
       "flag:beat stage7",
       "level:stage8",
-      "achievement:-1:VEXIPHOBIAX7",
+      "achievement:36:VEXIPHOBIAX7",
     ],
   },
   {
@@ -504,7 +504,7 @@ PROG: list[ProgressionNode] = [
     "receive": [
       "achievement:9:ACT 8",
       "flag:beat stage8",
-      "achievement:-1:VEXIPHOBIAX8",
+      "achievement:37:VEXIPHOBIAX8",
       "level:stage9",
     ],
   },
@@ -655,7 +655,7 @@ PROG: list[ProgressionNode] = [
       ],
     ],
     "receive": [
-      "achievement:-1:VEXIPHOBIAX10",
+      "achievement:38:VEXIPHOBIAX10",
     ],
   },
   {
