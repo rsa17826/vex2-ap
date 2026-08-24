@@ -638,7 +638,6 @@ PROG: list[ProgressionNode] = [
     "receive": [
       "star:5",
       "achievement:11:VEXED MUCH?",
-      "achievement:-1:VEXIPHOBIAX10",
       "flag:beat stage10",
     ],
   },
