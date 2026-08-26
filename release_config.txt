@@ -1,2 +1,2 @@
 
-vex2.apworld:run build
+vex2.apworld:run ./build
