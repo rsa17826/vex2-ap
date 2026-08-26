@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+trap 'rm -f ~/projects/Archipelago/output/apworlds/vex2.apworld' TERM
+_=$(python3.13 make_apworlds.py vex2)
+echo ~/projects/Archipelago/output/apworlds/vex2.apworld
+
+while :; do
+  sleep 100
+done
