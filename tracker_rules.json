@@ -1,5 +1,6 @@
 {
   "game": "Vex2",
+  "origin_region_name": "hub",
   "regions": {
     "hub": {
       "exits": [

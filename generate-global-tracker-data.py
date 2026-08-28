@@ -10,7 +10,7 @@ from BaseClasses import MultiWorld, CollectionState
 from Generate import get_seed_name
 from test.general import gen_steps
 
-GAME = sys.argv[1]
+GAME = sys.argv[1] if len(sys.argv) == 2 else "Vex2"
 
 
 import dataclasses
@@ -88,7 +88,7 @@ def build_world(seed=None):
 
 
 def dump(multiworld, world):
-  data = {"game": GAME, "regions": {}, "locations": {}, "entrances": {}}
+  data = {"game": GAME, "origin_region_name": world.origin_region_name, "regions": {}, "locations": {}, "entrances": {}}
 
   for region in multiworld.get_regions(PLAYER):
     data["regions"][region.name] = {
@@ -100,6 +100,7 @@ def dump(multiworld, world):
         "connects_to": entrance.connected_region.name if entrance.connected_region else None,
         "rule": serialize_rule(entrance.access_rule),
       }
+
 
   for loc in multiworld.get_locations(PLAYER):
     data["locations"][loc.name] = {
