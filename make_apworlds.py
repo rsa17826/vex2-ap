@@ -71,8 +71,8 @@ for worldname, worldtype in AutoWorldRegister.world_types.items():
     zip_path.unlink()
 
   apworld = APWorldContainer(str(zip_path))
-  apworld.minimum_ap_version = version_tuple
-  apworld.maximum_ap_version = version_tuple
+  # apworld.minimum_ap_version = version_tuple
+  # apworld.maximum_ap_version = version_tuple
   apworld.game = worldtype.game
   manifest.update(apworld.get_manifest())
   apworld.manifest_path = f"{file_name}/archipelago.json"
