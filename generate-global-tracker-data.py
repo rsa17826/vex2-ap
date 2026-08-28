@@ -10,7 +10,7 @@ from BaseClasses import MultiWorld, CollectionState
 from Generate import get_seed_name
 from test.general import gen_steps
 
-GAME = "Vex2" # your apworld's game name
+GAME = sys.argv[1]
 
 
 import dataclasses
@@ -47,9 +47,15 @@ def _serialize_value(v):
   if isinstance(v, (str, int, float, bool)) or v is None:
     return v
 
+  if callable(v) and not isinstance(v, Rule):
+    # AP's default access_rule (unset -> lambda state: True) or any other
+    # plain callable that isn't a rule_builder Rule object.
+    return {"type": "True_", "note": "default/unset rule (always accessible)"}
+
   if hasattr(v, "name"):
     return v.name
 
+  print("asdkjlasdlklkasd")
   return str(v)
 
 
@@ -94,7 +100,6 @@ def dump(multiworld, world):
         "connects_to": entrance.connected_region.name if entrance.connected_region else None,
         "rule": serialize_rule(entrance.access_rule),
       }
-
 
   for loc in multiworld.get_locations(PLAYER):
     data["locations"][loc.name] = {

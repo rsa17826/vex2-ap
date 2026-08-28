@@ -23,6 +23,7 @@ def set_all_entrance_rules(world: World) -> None:
     rule = reqs_to_rule(conn.get("requires"))
     if rule is None:
       continue
+
     entrance_name = conn.get("name") or f"{conn['from_region']} -> {conn['to_region']}"
     entrance = world.get_entrance(entrance_name)
     world.set_rule(entrance, rule)
@@ -70,6 +71,10 @@ def set_all_location_rules(world: World) -> None:
             world.set_rule(event_location, rule)
 
 
+
+
+
+
 def set_completion_condition(world: World) -> None:
   rule: Rule[World] = True_()
 
@@ -77,5 +82,6 @@ def set_completion_condition(world: World) -> None:
   if option_name is not None and getattr(world.options, option_name):
     for item in data.COMPLETION_REQUIRED_ITEMS:
       rule &= Has(item)
+
 
   world.set_completion_rule(rule)

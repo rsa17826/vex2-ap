@@ -227,13 +227,19 @@
     },
     "hub - level:stage0": {
       "region": "hub",
-      "rule": "<function <lambda> at 0x7657a1943060>",
+      "rule": {
+        "type": "True_",
+        "note": "default/unset rule (always accessible)"
+      },
       "item_dependencies": null,
       "region_dependencies": null
     },
     "hub - achievement:30:MICROWAVE": {
       "region": "hub",
-      "rule": "<function <lambda> at 0x7657a1943060>",
+      "rule": {
+        "type": "True_",
+        "note": "default/unset rule (always accessible)"
+      },
       "item_dependencies": null,
       "region_dependencies": null
     },
@@ -567,7 +573,10 @@
     },
     "stage1 - star:0": {
       "region": "stage1",
-      "rule": "<function <lambda> at 0x7657a1943060>",
+      "rule": {
+        "type": "True_",
+        "note": "default/unset rule (always accessible)"
+      },
       "item_dependencies": null,
       "region_dependencies": null
     },
@@ -1503,13 +1512,19 @@
     },
     "stage10 - star:0": {
       "region": "stage10",
-      "rule": "<function <lambda> at 0x7657a1943060>",
+      "rule": {
+        "type": "True_",
+        "note": "default/unset rule (always accessible)"
+      },
       "item_dependencies": null,
       "region_dependencies": null
     },
     "stage10 - star:1": {
       "region": "stage10",
-      "rule": "<function <lambda> at 0x7657a1943060>",
+      "rule": {
+        "type": "True_",
+        "note": "default/unset rule (always accessible)"
+      },
       "item_dependencies": null,
       "region_dependencies": null
     },
@@ -1575,7 +1590,10 @@
     },
     "stage10 - star:4": {
       "region": "stage10",
-      "rule": "<function <lambda> at 0x7657a1943060>",
+      "rule": {
+        "type": "True_",
+        "note": "default/unset rule (always accessible)"
+      },
       "item_dependencies": null,
       "region_dependencies": null
     },
@@ -1917,7 +1935,10 @@
     },
     "stage1 - star 0 can be got": {
       "region": "stage1",
-      "rule": "<function <lambda> at 0x7657a1943060>",
+      "rule": {
+        "type": "True_",
+        "note": "default/unset rule (always accessible)"
+      },
       "item_dependencies": null,
       "region_dependencies": null
     },
@@ -2282,13 +2303,19 @@
     },
     "stage10 - star 0 can be got": {
       "region": "stage10",
-      "rule": "<function <lambda> at 0x7657a1943060>",
+      "rule": {
+        "type": "True_",
+        "note": "default/unset rule (always accessible)"
+      },
       "item_dependencies": null,
       "region_dependencies": null
     },
     "stage10 - star 1 can be got": {
       "region": "stage10",
-      "rule": "<function <lambda> at 0x7657a1943060>",
+      "rule": {
+        "type": "True_",
+        "note": "default/unset rule (always accessible)"
+      },
       "item_dependencies": null,
       "region_dependencies": null
     },
@@ -2354,7 +2381,10 @@
     },
     "stage10 - star 4 can be got": {
       "region": "stage10",
-      "rule": "<function <lambda> at 0x7657a1943060>",
+      "rule": {
+        "type": "True_",
+        "note": "default/unset rule (always accessible)"
+      },
       "item_dependencies": null,
       "region_dependencies": null
     },

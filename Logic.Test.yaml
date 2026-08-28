@@ -42,7 +42,7 @@ Logic Test:
   ################
   progression_balancing:
     # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
+    #
     # A lower setting means more getting stuck. A higher setting means less getting stuck.
     #
     # You can define additional values between the minimum and maximum values.
@@ -58,24 +58,24 @@ Logic Test:
 
   accessibility:
     # Set rules for reachability of your items/locations.
-    # 
+    #
     # **Full:** ensure everything can be reached and acquired.
-    # 
+    #
     # **Minimal:** ensure what is needed to reach your goal can be acquired.
     full: 50
     minimal: 0
 
   count_events:
     # Whether in-game events cause a sphere boundary.
-    # 
+    #
     # Off (default): events never create a boundary (the canonical sendable-sphere
     # grouping); they are still collected in dependency order, so spheres come out
     # coarser.
     # On: an item unlocked by an event that became reachable in a wave lands in the
     # next sphere, so events create boundaries: finer spheres, faithful to real
     # play order.
-    'false': 50
-    'true': 0
+    "false": 50
+    "true": 0
 
   ###########################
   # Item & Location Options #

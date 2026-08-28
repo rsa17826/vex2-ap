@@ -39,7 +39,7 @@ MICROWAVE_CANDIDATES=(
   "move:walljump" "move:bounce" "move:slide"
 )
 
-declare -A RESULTS   # key: "<receive>::<item>" -> "success failures"
+declare -A RESULTS # key: "<receive>::<item>" -> "success failures"
 
 backup_files() {
   cp "$ITEMS_FILE" "${ITEMS_FILE}.bak"
@@ -87,7 +87,7 @@ EOF
 
 run_fuzz() {
   # Runs from the Archipelago repo root (two levels up from worlds/vex2).
-  (python3.13 ../../fuzz.py -r "$RUNS" -j "$JOBS" -g vex2 -n 1) 2>&1||:
+  (python3.13 ../../fuzz.py -r "$RUNS" -j "$JOBS" -g vex2 -n 1) 2>&1 || :
 }
 
 parse_counts() {
@@ -111,7 +111,7 @@ sweep_slot() {
 
     local out success failures
     out=$(run_fuzz)
-    read -r success failures <<< "$(parse_counts "$out")"
+    read -r success failures <<<"$(parse_counts "$out")"
 
     echo "  Success: ${success}  Failures: ${failures}" >&2
     RESULTS["${slot_receive}::${item}"]="${success} ${failures}"
