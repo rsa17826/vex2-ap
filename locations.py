@@ -18,6 +18,10 @@ for thing in PROG:
           LOCATION_NAME_TO_ID[itemName] = _id_counter
           _id_counter += 1
 
+
+
+
+
 # NOTE: game_data.EVENTS entries are logic events, not real shuffled
 # locations, so they are intentionally NOT added to LOCATION_NAME_TO_ID here
 # -- see create_events() below, which uses add_event() the same way
@@ -78,3 +82,6 @@ def create_events(world: World) -> None:
           location_type=Vex2Location,
           item_type=Vex2Item,
         )
+
+
+
