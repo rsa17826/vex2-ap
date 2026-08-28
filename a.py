@@ -1,34 +1,41 @@
-import sys, json, os
+import sys, json, os, random
+from argparse import Namespace
 
-os.chdir("/home/nyix/projects/Archipelago")
-sys.path.insert(0, os.getcwd())
+# os.chdir("/home/nyix/projects/Archipelago")
+sys.path.insert(0, "/home/nyix/projects/Archipelago")
 
-from worlds.AutoWorldRegister import AutoWorldRegister
-from BaseClasses import MultiWorld
+from worlds import AutoWorld
+from worlds.AutoWorld import AutoWorldRegister, call_all
+from BaseClasses import MultiWorld, CollectionState
+from Generate import get_seed_name
+from test.general import gen_steps
+
+GAME = "Vex2" # your apworld's game name
+
+
+import dataclasses
 from rule_builder.rules import Rule
-
-GAME = "Vex 2" # your apworld's game name
 
 
 def serialize_rule(rule):
   if rule is None:
     return None
 
-  if not isinstance(rule, Rule):
+  if not dataclasses.is_dataclass(rule):
     return _serialize_value(rule)
 
   out = {"type": type(rule).__name__}
-  for k, v in vars(rule).items():
-    if k.startswith("_"):
-      continue
+  for f in dataclasses.fields(rule):
+    if f.name in ("options", "filtered_resolution"):
+      continue # internal/solver state, not logic data
 
-    out[k] = _serialize_value(v)
+    out[f.name] = _serialize_value(getattr(rule, f.name))
 
   return out
 
 
 def _serialize_value(v):
-  if isinstance(v, Rule):
+  if dataclasses.is_dataclass(v) and not isinstance(v, type):
     return serialize_rule(v)
 
   if isinstance(v, (list, tuple, set, frozenset)):
@@ -40,35 +47,44 @@ def _serialize_value(v):
   if isinstance(v, (str, int, float, bool)) or v is None:
     return v
 
-  if hasattr(v, "name"): # enums / ItemClassification etc
+  if hasattr(v, "name"):
     return v.name
 
   return str(v)
 
 
-def build_world():
+PLAYER = 1
+OPTIONS = {} # override option values here, e.g. {"goal": "stage10"}
+
+
+def build_world(seed=None):
   world_type = AutoWorldRegister.world_types[GAME]
+
   multiworld = MultiWorld(1)
-  multiworld.game[1] = GAME
-  multiworld.player_name[1] = "Tracker"
-  # set default options for player 1 - adjust to your options class
-  from Options import Toggle
+  multiworld.game[PLAYER] = GAME
+  multiworld.player_name = {PLAYER: "Tracker"}
+  multiworld.set_seed(seed)
+  random.seed(multiworld.seed)
+  multiworld.seed_name = get_seed_name(random)
 
-  for opt_key, opt_cls in world_type.options_dataclass.type_hints.items():
-    multiworld.set_options
+  args = Namespace()
+  for name, option in world_type.options_dataclass.type_hints.items():
+    setattr(args, name, {PLAYER: option.from_any(OPTIONS.get(name, option.default))})
 
-  world = world_type(multiworld, 1)
-  world.generate_early()
-  world.create_regions()
-  world.create_items()
-  world.set_rules()
+  multiworld.set_options(args)
+  multiworld.state = CollectionState(multiworld)
+
+  world = multiworld.worlds[PLAYER]
+  for step in gen_steps:
+    call_all(multiworld, step)
+
   return multiworld, world
 
 
 def dump(multiworld, world):
   data = {"game": GAME, "regions": {}, "locations": {}, "entrances": {}}
 
-  for region in multiworld.get_regions(1):
+  for region in multiworld.get_regions(PLAYER):
     data["regions"][region.name] = {
       "exits": [e.name for e in region.exits],
       "locations": [l.name for l in region.locations],
@@ -76,21 +92,23 @@ def dump(multiworld, world):
     for entrance in region.exits:
       data["entrances"][entrance.name] = {
         "connects_to": entrance.connected_region.name if entrance.connected_region else None,
-        "rule": serialize_rule(getattr(entrance, "_rule_obj", None) or entrance.access_rule),
+        "rule": serialize_rule(entrance.access_rule),
       }
 
 
-  for loc in multiworld.get_locations(1):
+  for loc in multiworld.get_locations(PLAYER):
     data["locations"][loc.name] = {
       "region": loc.parent_region.name if loc.parent_region else None,
-      "rule": serialize_rule(getattr(loc, "_rule_obj", None) or loc.access_rule),
+      "rule": serialize_rule(loc.access_rule),
+      "item_dependencies": list(loc.access_rule.item_dependencies()) if hasattr(loc.access_rule, "item_dependencies") else None,
+      "region_dependencies": list(loc.access_rule.region_dependencies()) if hasattr(loc.access_rule, "region_dependencies") else None,
     }
 
   return data
 
 
 if __name__ == "__main__":
-  multiworld, world = build_world()
+  multiworld, world = build_world(seed=0)
   data = dump(multiworld, world)
   with open("tracker_rules.json", "w") as f:
     json.dump(data, f, indent=2)
