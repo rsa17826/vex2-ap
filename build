@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 trap 'rm -f ~/projects/Archipelago/output/apworlds/vex2.apworld; exit 0' TERM
+sed -i 's/"world_version": .*,/"world_version": "'"$VERSION"'.0.0",/' archipelago.json
 python3.13 make_apworlds.py vex2 &>/dev/null
 echo ~/projects/Archipelago/output/apworlds/vex2.apworld
 
