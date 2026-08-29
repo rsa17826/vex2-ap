@@ -196,7 +196,8 @@
       "item_dependencies": [
         "flag:starCanBeGot"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "hub - achievement:15:ASTRONAUT": {
       "region": "hub",
@@ -210,7 +211,8 @@
       "item_dependencies": [
         "flag:starCanBeGot"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "hub - achievement:16:BUZZ LIGHTYEAR": {
       "region": "hub",
@@ -224,7 +226,8 @@
       "item_dependencies": [
         "flag:starCanBeGot"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "hub - level:stage0": {
       "region": "hub",
@@ -233,7 +236,8 @@
         "note": "default/unset rule (always accessible)"
       },
       "item_dependencies": null,
-      "region_dependencies": null
+      "region_dependencies": null,
+      "is_event": false
     },
     "hub - achievement:30:MICROWAVE": {
       "region": "hub",
@@ -242,7 +246,8 @@
         "note": "default/unset rule (always accessible)"
       },
       "item_dependencies": null,
-      "region_dependencies": null
+      "region_dependencies": null,
+      "is_event": false
     },
     "hub - achievement:13:NOT A SCRATCH": {
       "region": "hub",
@@ -277,7 +282,8 @@
         "flag:beat stage8",
         "flag:beat stage9"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "hub - achievement:21:2ND PLACE": {
       "region": "hub",
@@ -312,7 +318,8 @@
         "flag:beat stage8",
         "flag:beat stage9"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "hub - achievement:22:1ST PLACE": {
       "region": "hub",
@@ -347,7 +354,8 @@
         "flag:beat stage8",
         "flag:beat stage9"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "hub - achievement:23:PERFECT": {
       "region": "hub",
@@ -382,7 +390,8 @@
         "flag:beat stage8",
         "flag:beat stage9"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "hub - achievement:25:PERFECTIONIST": {
       "region": "hub",
@@ -439,7 +448,8 @@
         "level:stage8",
         "level:stage9"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "hub - achievement:24:OLYMPIAN": {
       "region": "hub",
@@ -496,7 +506,8 @@
         "level:stage8",
         "level:stage9"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage0 - achievement:12:VEXIPHOBIA": {
       "region": "stage0",
@@ -513,7 +524,8 @@
         "flag:beat stage0",
         "level:stage0"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage0 - level:stage1": {
       "region": "stage0",
@@ -532,7 +544,8 @@
         "move:slide",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage0 - achievement:1:TUTORIAL": {
       "region": "stage0",
@@ -551,7 +564,8 @@
         "move:slide",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage0 - star:0": {
       "region": "stage0",
@@ -570,7 +584,8 @@
         "move:slide",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage1 - star:0": {
       "region": "stage1",
@@ -579,7 +594,8 @@
         "note": "default/unset rule (always accessible)"
       },
       "item_dependencies": null,
-      "region_dependencies": null
+      "region_dependencies": null,
+      "is_event": false
     },
     "stage1 - star:1": {
       "region": "stage1",
@@ -593,7 +609,8 @@
       "item_dependencies": [
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage1 - star:2": {
       "region": "stage1",
@@ -610,7 +627,8 @@
         "move:lever",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage1 - achievement:2:ACT 1": {
       "region": "stage1",
@@ -627,7 +645,8 @@
         "move:lever",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage1 - achievement:31:VEXIPHOBIAX1": {
       "region": "stage1",
@@ -644,7 +663,8 @@
         "move:lever",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage1 - level:stage2": {
       "region": "stage1",
@@ -661,7 +681,8 @@
         "move:lever",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage2 - star:0": {
       "region": "stage2",
@@ -680,7 +701,8 @@
         "move:swim",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage2 - star:1": {
       "region": "stage2",
@@ -697,7 +719,8 @@
         "move:swim",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage2 - achievement:3:ACT 2": {
       "region": "stage2",
@@ -716,7 +739,8 @@
         "move:swim",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage2 - level:stage3": {
       "region": "stage2",
@@ -735,7 +759,8 @@
         "move:swim",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage2 - achievement:32:VEXIPHOBIAX2": {
       "region": "stage2",
@@ -754,7 +779,8 @@
         "move:swim",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage3 - star:0": {
       "region": "stage3",
@@ -785,7 +811,8 @@
         "move:lever",
         "move:polejump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage3 - star:1": {
       "region": "stage3",
@@ -822,7 +849,8 @@
         "move:polejump",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage3 - achievement:4:ACT 3": {
       "region": "stage3",
@@ -841,7 +869,8 @@
         "move:lever",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage3 - level:stage4": {
       "region": "stage3",
@@ -860,7 +889,8 @@
         "move:lever",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage3 - achievement:33:VEXIPHOBIAX3": {
       "region": "stage3",
@@ -879,7 +909,8 @@
         "move:lever",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage4 - star:0": {
       "region": "stage4",
@@ -893,7 +924,8 @@
       "item_dependencies": [
         "move:swim"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage4 - achievement:5:ACT 4": {
       "region": "stage4",
@@ -912,7 +944,8 @@
         "move:swim",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage4 - level:stage5": {
       "region": "stage4",
@@ -931,7 +964,8 @@
         "move:swim",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage5 - star:0": {
       "region": "stage5",
@@ -945,7 +979,8 @@
       "item_dependencies": [
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage5 - star:1": {
       "region": "stage5",
@@ -964,7 +999,8 @@
         "move:lever",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage5 - achievement:6:ACT 5": {
       "region": "stage5",
@@ -1005,7 +1041,8 @@
         "move:walljump",
         "move:lever"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage5 - level:stage6": {
       "region": "stage5",
@@ -1046,7 +1083,8 @@
         "move:walljump",
         "move:lever"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage5 - achievement:34:VEXIPHOBIAX5": {
       "region": "stage5",
@@ -1087,7 +1125,8 @@
         "move:walljump",
         "move:lever"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage6 - star:0": {
       "region": "stage6",
@@ -1110,7 +1149,8 @@
         "move:swim",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage6 - star:1": {
       "region": "stage6",
@@ -1129,7 +1169,8 @@
         "move:swim",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage6 - star:2": {
       "region": "stage6",
@@ -1152,7 +1193,8 @@
         "move:swim",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage6 - achievement:7:ACT 6": {
       "region": "stage6",
@@ -1175,7 +1217,8 @@
         "move:swim",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage6 - level:stage7": {
       "region": "stage6",
@@ -1198,7 +1241,8 @@
         "move:swim",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage6 - achievement:35:VEXIPHOBIAX6": {
       "region": "stage6",
@@ -1221,7 +1265,8 @@
         "move:swim",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage7 - star:0": {
       "region": "stage7",
@@ -1240,7 +1285,8 @@
         "move:kick",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage7 - achievement:8:ACT 7": {
       "region": "stage7",
@@ -1261,7 +1307,8 @@
         "move:polejump",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage7 - level:stage8": {
       "region": "stage7",
@@ -1282,7 +1329,8 @@
         "move:polejump",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage7 - achievement:36:VEXIPHOBIAX7": {
       "region": "stage7",
@@ -1303,7 +1351,8 @@
         "move:polejump",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage8 - star:0": {
       "region": "stage8",
@@ -1322,7 +1371,8 @@
         "move:slide",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage8 - star:1": {
       "region": "stage8",
@@ -1341,7 +1391,8 @@
         "move:slide",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage8 - achievement:9:ACT 8": {
       "region": "stage8",
@@ -1366,7 +1417,8 @@
         "move:swim",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage8 - achievement:37:VEXIPHOBIAX8": {
       "region": "stage8",
@@ -1391,7 +1443,8 @@
         "move:swim",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage8 - level:stage9": {
       "region": "stage8",
@@ -1416,7 +1469,8 @@
         "move:swim",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage9 - star:0": {
       "region": "stage9",
@@ -1435,7 +1489,8 @@
         "move:swim",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage9 - star:1": {
       "region": "stage9",
@@ -1454,7 +1509,8 @@
         "move:slide",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage9 - star:2": {
       "region": "stage9",
@@ -1471,7 +1527,8 @@
         "move:slide",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage9 - achievement:10:ACT MASTER": {
       "region": "stage9",
@@ -1490,7 +1547,8 @@
         "move:slide",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage9 - level:stage10": {
       "region": "stage9",
@@ -1509,7 +1567,8 @@
         "move:slide",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage10 - star:0": {
       "region": "stage10",
@@ -1518,7 +1577,8 @@
         "note": "default/unset rule (always accessible)"
       },
       "item_dependencies": null,
-      "region_dependencies": null
+      "region_dependencies": null,
+      "is_event": false
     },
     "stage10 - star:1": {
       "region": "stage10",
@@ -1527,7 +1587,8 @@
         "note": "default/unset rule (always accessible)"
       },
       "item_dependencies": null,
-      "region_dependencies": null
+      "region_dependencies": null,
+      "is_event": false
     },
     "stage10 - star:2": {
       "region": "stage10",
@@ -1566,7 +1627,8 @@
         "move:cannon",
         "move:swim"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage10 - star:3": {
       "region": "stage10",
@@ -1587,7 +1649,8 @@
         "move:swim",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage10 - star:4": {
       "region": "stage10",
@@ -1596,7 +1659,8 @@
         "note": "default/unset rule (always accessible)"
       },
       "item_dependencies": null,
-      "region_dependencies": null
+      "region_dependencies": null,
+      "is_event": false
     },
     "stage10 - star:5": {
       "region": "stage10",
@@ -1645,7 +1709,8 @@
         "move:cannon",
         "move:swim"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage10 - achievement:11:VEXED MUCH?": {
       "region": "stage10",
@@ -1694,7 +1759,8 @@
         "move:cannon",
         "move:swim"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage10 - achievement:38:VEXIPHOBIAX10": {
       "region": "stage10",
@@ -1729,7 +1795,8 @@
         "move:pulley",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "hub - achievement:27:CURB STOMP": {
       "region": "hub",
@@ -1769,7 +1836,8 @@
         "level:stage2",
         "move:swim"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "hub - achievement:28:LIFESAVER": {
       "region": "hub",
@@ -1833,7 +1901,8 @@
         "level:stage10",
         "move:cannon"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "hub - achievement:29:KEYLOGGER": {
       "region": "hub",
@@ -1875,7 +1944,8 @@
         "move:cannon",
         "move:pulley"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "hub - achievement:20:BLOWN AWAY!": {
       "region": "hub",
@@ -1913,7 +1983,8 @@
         "move:slide",
         "move:swim"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": false
     },
     "stage0 - star 0 can be got": {
       "region": "stage0",
@@ -1932,7 +2003,8 @@
         "move:slide",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": true
     },
     "stage1 - star 0 can be got": {
       "region": "stage1",
@@ -1941,7 +2013,8 @@
         "note": "default/unset rule (always accessible)"
       },
       "item_dependencies": null,
-      "region_dependencies": null
+      "region_dependencies": null,
+      "is_event": true
     },
     "stage1 - star 1 can be got": {
       "region": "stage1",
@@ -1955,7 +2028,8 @@
       "item_dependencies": [
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": true
     },
     "stage1 - star 2 can be got": {
       "region": "stage1",
@@ -1972,7 +2046,8 @@
         "move:lever",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": true
     },
     "stage2 - star 0 can be got": {
       "region": "stage2",
@@ -1991,7 +2066,8 @@
         "move:swim",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": true
     },
     "stage2 - star 1 can be got": {
       "region": "stage2",
@@ -2008,7 +2084,8 @@
         "move:swim",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": true
     },
     "stage3 - star 0 can be got": {
       "region": "stage3",
@@ -2039,7 +2116,8 @@
         "move:lever",
         "move:polejump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": true
     },
     "stage3 - star 1 can be got": {
       "region": "stage3",
@@ -2076,7 +2154,8 @@
         "move:polejump",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": true
     },
     "stage4 - star 0 can be got": {
       "region": "stage4",
@@ -2090,7 +2169,8 @@
       "item_dependencies": [
         "move:swim"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": true
     },
     "stage5 - star 0 can be got": {
       "region": "stage5",
@@ -2104,7 +2184,8 @@
       "item_dependencies": [
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": true
     },
     "stage5 - star 1 can be got": {
       "region": "stage5",
@@ -2123,7 +2204,8 @@
         "move:lever",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": true
     },
     "stage6 - star 0 can be got": {
       "region": "stage6",
@@ -2146,7 +2228,8 @@
         "move:swim",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": true
     },
     "stage6 - star 1 can be got": {
       "region": "stage6",
@@ -2165,7 +2248,8 @@
         "move:swim",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": true
     },
     "stage6 - star 2 can be got": {
       "region": "stage6",
@@ -2188,7 +2272,8 @@
         "move:swim",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": true
     },
     "stage7 - star 0 can be got": {
       "region": "stage7",
@@ -2207,7 +2292,8 @@
         "move:kick",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": true
     },
     "stage8 - star 0 can be got": {
       "region": "stage8",
@@ -2226,7 +2312,8 @@
         "move:slide",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": true
     },
     "stage8 - star 1 can be got": {
       "region": "stage8",
@@ -2245,7 +2332,8 @@
         "move:slide",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": true
     },
     "stage9 - star 0 can be got": {
       "region": "stage9",
@@ -2264,7 +2352,8 @@
         "move:swim",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": true
     },
     "stage9 - star 1 can be got": {
       "region": "stage9",
@@ -2283,7 +2372,8 @@
         "move:slide",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": true
     },
     "stage9 - star 2 can be got": {
       "region": "stage9",
@@ -2300,7 +2390,8 @@
         "move:slide",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": true
     },
     "stage10 - star 0 can be got": {
       "region": "stage10",
@@ -2309,7 +2400,8 @@
         "note": "default/unset rule (always accessible)"
       },
       "item_dependencies": null,
-      "region_dependencies": null
+      "region_dependencies": null,
+      "is_event": true
     },
     "stage10 - star 1 can be got": {
       "region": "stage10",
@@ -2318,7 +2410,8 @@
         "note": "default/unset rule (always accessible)"
       },
       "item_dependencies": null,
-      "region_dependencies": null
+      "region_dependencies": null,
+      "is_event": true
     },
     "stage10 - star 2 can be got": {
       "region": "stage10",
@@ -2357,7 +2450,8 @@
         "move:cannon",
         "move:swim"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": true
     },
     "stage10 - star 3 can be got": {
       "region": "stage10",
@@ -2378,7 +2472,8 @@
         "move:swim",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": true
     },
     "stage10 - star 4 can be got": {
       "region": "stage10",
@@ -2387,7 +2482,8 @@
         "note": "default/unset rule (always accessible)"
       },
       "item_dependencies": null,
-      "region_dependencies": null
+      "region_dependencies": null,
+      "is_event": true
     },
     "stage10 - star 5 can be got": {
       "region": "stage10",
@@ -2436,7 +2532,8 @@
         "move:cannon",
         "move:swim"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": true
     },
     "stage0 - flag:beat stage0": {
       "region": "stage0",
@@ -2455,7 +2552,8 @@
         "move:slide",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": true
     },
     "stage1 - flag:beat stage1": {
       "region": "stage1",
@@ -2472,7 +2570,8 @@
         "move:lever",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": true
     },
     "stage2 - flag:beat stage2": {
       "region": "stage2",
@@ -2491,7 +2590,8 @@
         "move:swim",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": true
     },
     "stage3 - flag:beat stage3": {
       "region": "stage3",
@@ -2510,7 +2610,8 @@
         "move:lever",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": true
     },
     "stage4 - flag:beat stage4": {
       "region": "stage4",
@@ -2529,7 +2630,8 @@
         "move:swim",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": true
     },
     "stage5 - flag:beat stage5": {
       "region": "stage5",
@@ -2570,7 +2672,8 @@
         "move:walljump",
         "move:lever"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": true
     },
     "stage6 - flag:beat stage6": {
       "region": "stage6",
@@ -2593,7 +2696,8 @@
         "move:swim",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": true
     },
     "stage7 - flag:beat stage7": {
       "region": "stage7",
@@ -2614,7 +2718,8 @@
         "move:polejump",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": true
     },
     "stage8 - flag:beat stage8": {
       "region": "stage8",
@@ -2639,7 +2744,8 @@
         "move:swim",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": true
     },
     "stage9 - flag:beat stage9": {
       "region": "stage9",
@@ -2658,7 +2764,8 @@
         "move:slide",
         "move:walljump"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": true
     },
     "stage10 - flag:beat stage10": {
       "region": "stage10",
@@ -2707,7 +2814,8 @@
         "move:cannon",
         "move:swim"
       ],
-      "region_dependencies": []
+      "region_dependencies": [],
+      "is_event": true
     }
   },
   "entrances": {

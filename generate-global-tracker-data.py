@@ -1,7 +1,6 @@
 import sys, json, os, random
 from argparse import Namespace
 
-# os.chdir("/home/nyix/projects/Archipelago")
 sys.path.insert(0, "/home/nyix/projects/Archipelago")
 
 from worlds import AutoWorld
@@ -108,6 +107,11 @@ def dump(multiworld, world):
       "rule": serialize_rule(loc.access_rule),
       "item_dependencies": list(loc.access_rule.item_dependencies()) if hasattr(loc.access_rule, "item_dependencies") else None,
       "region_dependencies": list(loc.access_rule.region_dependencies()) if hasattr(loc.access_rule, "region_dependencies") else None,
+      # Event locations hold event items used purely for logic (e.g. "beat stageX")
+      # and are never part of the shuffled item pool. AP marks these by giving
+      # them no address (address is None) -- real, checkable locations always
+      # have an integer/tuple address assigned by the world.
+      "is_event": loc.address is None,
     }
 
   return data
