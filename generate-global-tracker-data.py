@@ -1,1 +1,1 @@
-generate-global-tracker-data.py
+/home/nyix/projects/aptracker/generate-global-tracker-data.py

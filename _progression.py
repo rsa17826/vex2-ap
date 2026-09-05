@@ -361,14 +361,12 @@ PROG: list[ProgressionNode] = [
     "room": "stage5",
     "requires": [
       [
-        "move:cannon",
         "move:portal",
         "move:polejump",
         "move:walljump",
         "move:slide",
       ],
       [
-        "move:cannon",
         "move:lever",
         "move:walljump",
       ],
