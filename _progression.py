@@ -305,6 +305,11 @@ PROG: list[ProgressionNode] = [
         "move:walljump",
         "move:cannon",
       ],
+      [
+        "move:polejump",
+        "move:walljump",
+        "move:cannon",
+      ],
     ],
     "receive": [
       "achievement:4:ACT 3",
