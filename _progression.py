@@ -267,6 +267,10 @@ PROG: list[ProgressionNode] = [
         "move:polejump",
       ],
       [
+        "move:walljump",
+        "move:polejump",
+      ],
+      [
         "move:lever",
         # "move:walljump",
       ],
