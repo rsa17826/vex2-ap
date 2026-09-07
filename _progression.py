@@ -482,10 +482,9 @@ PROG: list[ProgressionNode] = [
     "room": "stage8",
     "requires": [
       [
-        "move:lever",
         "move:walljump",
         "move:slide",
-        # "move:bounce",
+        "move:bounce",
       ],
     ],
     "receive": [
