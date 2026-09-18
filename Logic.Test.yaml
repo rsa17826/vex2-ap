@@ -74,8 +74,8 @@ Logic Test:
     # On: an item unlocked by an event that became reachable in a wave lands in the
     # next sphere, so events create boundaries: finer spheres, faithful to real
     # play order.
-    "false": 50
-    "true": 0
+    "false": 0
+    "true": 1
 
   ###########################
   # Item & Location Options #

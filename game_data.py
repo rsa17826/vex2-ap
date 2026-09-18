@@ -126,6 +126,8 @@ CORE_ITEMS: tuple[str, ...] = (
   "move:slide",
   "move:swim",
   "move:walljump",
+  "move:key",
+  "move:lightswitch",
 )
 
 # Filler / trap items. Anything starting with "trap:" is classified as a
