@@ -360,6 +360,11 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:walljump",
+        "move:slide",
+      ],
+      [
+        "move:walljump",
+        "move:lever",
       ],
     ],
     "receive": [
