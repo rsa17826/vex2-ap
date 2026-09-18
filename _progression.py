@@ -396,6 +396,7 @@ PROG: list[ProgressionNode] = [
         "move:cannon",
         "move:portal",
         "move:pulley",
+        "move:key",
       ],
     ],
     "receive": [
@@ -409,6 +410,7 @@ PROG: list[ProgressionNode] = [
         "move:walljump",
         "move:pulley",
         "move:swim",
+        "move:key",
       ],
     ],
     "receive": [
@@ -424,6 +426,7 @@ PROG: list[ProgressionNode] = [
         "move:portal",
         "move:swim",
         "move:cannon",
+        "move:key",
       ],
     ],
     "receive": [
@@ -439,6 +442,7 @@ PROG: list[ProgressionNode] = [
         "move:pulley",
         "move:swim",
         "move:cannon",
+        "move:key",
       ],
     ],
     "receive": [
@@ -455,6 +459,7 @@ PROG: list[ProgressionNode] = [
         "move:kick",
         "move:walljump",
         "move:cannon",
+        "move:key",
       ],
     ],
     "receive": [
@@ -469,6 +474,7 @@ PROG: list[ProgressionNode] = [
         "move:cannon",
         "move:walljump",
         "move:polejump",
+        "move:key",
       ],
     ],
     "receive": [
@@ -485,6 +491,7 @@ PROG: list[ProgressionNode] = [
         "move:walljump",
         "move:slide",
         "move:bounce",
+        "move:key",
       ],
     ],
     "receive": [
@@ -514,6 +521,7 @@ PROG: list[ProgressionNode] = [
         "move:slide",
         "move:swim",
         "move:kick",
+        "move:key",
       ],
     ],
     "receive": [
@@ -530,6 +538,7 @@ PROG: list[ProgressionNode] = [
         "move:swim",
         "move:slide",
         "move:walljump",
+        "move:lightswitch",
       ],
     ],
     "receive": [
@@ -543,6 +552,8 @@ PROG: list[ProgressionNode] = [
         "move:slide",
         "move:polejump",
         "move:walljump",
+        "move:lightswitch",
+        "move:key",
       ],
     ],
     "receive": [
@@ -555,6 +566,7 @@ PROG: list[ProgressionNode] = [
       [
         "move:slide",
         "move:walljump",
+        "move:lightswitch",
       ],
     ],
     "receive": [
@@ -568,6 +580,8 @@ PROG: list[ProgressionNode] = [
         "move:slide",
         "move:walljump",
         "move:pulley",
+        "move:lightswitch",
+        "move:key",
       ],
     ],
     "receive": [
@@ -593,12 +607,14 @@ PROG: list[ProgressionNode] = [
         "move:walljump",
         "move:bounce",
         "move:pulley",
+        "move:key",
       ],
       [
         "move:cannon",
         "move:swim",
         "move:bounce",
         "move:walljump",
+        "move:key",
       ],
     ],
     "receive": [
@@ -613,6 +629,7 @@ PROG: list[ProgressionNode] = [
         "move:swim",
         "move:bounce",
         "move:walljump",
+        "move:key",
       ],
     ],
     "receive": [
@@ -638,6 +655,8 @@ PROG: list[ProgressionNode] = [
         "move:pulley",
         "move:walljump",
         "move:portal",
+        "move:key",
+        "move:lightswitch",
       ],
       [
         "move:cannon",
@@ -645,6 +664,7 @@ PROG: list[ProgressionNode] = [
         "move:swim",
         "move:portal",
         "move:walljump",
+        "move:key",
       ],
       [
         "move:portal",
@@ -664,6 +684,8 @@ PROG: list[ProgressionNode] = [
         "move:pulley",
         "move:walljump",
         "move:portal",
+        "move:key",
+        "move:lightswitch",
       ],
       [
         "move:portal",
@@ -729,6 +751,7 @@ PROG: list[ProgressionNode] = [
         "level:stage9",
         "move:swim",
         "move:slide",
+        "move:key",
       ],
       [
         "level:stage10",
@@ -736,6 +759,7 @@ PROG: list[ProgressionNode] = [
         "move:cannon",
         "move:swim",
         "move:pulley",
+        "move:key",
       ],
     ],
     "receive": [
